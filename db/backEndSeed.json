@@ -1,0 +1,17 @@
+var angular = new Framework({
+  title: "Angular",
+  summary: "MVC JavaScript",
+  language: "JavaScript",
+  languageSite: "www.angular.com",
+  docs: "docs",
+  npm: "String",
+  cdn: "String",
+  bower: "String",
+  website: "String",
+  latest: "String",
+  github: "String",
+  twitter: "String",
+  assistance: "String",
+  maintainers: "String",
+  image: "String"
+});
