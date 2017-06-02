@@ -8,20 +8,20 @@ var Schema = mongoose.Schema;
 var FrameworkSchema = new Schema({
   title: String,
   summary: String,
+  notable: String,
   language: String,
   languageSite: String,
   docs: String,
   npm: String,
   cdn: String,
   bower: String,
-  website: String,
-  latest: String,
   github: String,
   twitter: String,
   assistance: String,
   maintainers: String,
   image: String
 });
+
 
 var EndSchema = new Schema({
   type: String,
