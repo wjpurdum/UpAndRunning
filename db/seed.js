@@ -26,8 +26,8 @@ var backend = new End({type: "Back End" })
 
 var angular = new Framework({
   title: "AngularJS",
-  summary: "Angular allows us to make dynamic views in our applications using two-way databinding. We integrate Angular directly into our HTML to determine components and behaviors."
-  notable: "two-way databinding"
+  summary: "Angular allows us to make dynamic views in our applications using two-way databinding. We integrate Angular directly into our HTML to determine components and behaviors.",
+  notable: "two-way databinding",
   language: "JavaScript Framework",
   languageSite: "https://angularjs.org/",
   docs: "https://docs.angularjs.org/api",
@@ -43,8 +43,8 @@ var angular = new Framework({
 
 var react = new Framework({
   title: "React",
-  notable: "Virtual Document Object Model and JSX(an extension of JavaScript that looks like looks and acts like HTML)"
-  summary: "Use React to create fast web applications that you want to take to scale. React allows you to update and re-render individual components of your application without refreshing the entire page."
+  notable: "Virtual Document Object Model and JSX(an extension of JavaScript that looks like looks and acts like HTML)",
+  summary: "Use React to create fast web applications that you want to take to scale. React allows you to update and re-render individual components of your application without refreshing the entire page.",
   language: "JavaScript Library",
   languageSite: "https://facebook.github.io/react/",
   docs: "https://facebook.github.io/react/docs/installation.html",
@@ -60,8 +60,8 @@ var react = new Framework({
 
 var vue = new Framework({
   title: "Vue.js",
-  notable: "It prides itself on being a simplified and streamlined framework that is less opinionated and more developer-friendly than other JavaScript frameworks."
-  summary: "Use Vue.js to build interactive user interfaces."
+  notable: "It prides itself on being a simplified and streamlined framework that is less opinionated and more developer-friendly than other JavaScript frameworks.",
+  summary: "Use Vue.js to build interactive user interfaces.",
   language: "JavaScript Framework",
   languageSite: "https://vuejs.org/",
   docs: "https://vuejs.org/v2/api/",
@@ -78,15 +78,13 @@ var vue = new Framework({
 
 var backbone = new Framework({
   title: "Backbone.js",
-  notable: "Backbone is lightweight which allows applications to run quickly, and only requires one dependency (Underscore.js)"
-  summary: "Use Backbone to create to create fast single page web applications that don't handle or require a lot of data."
+  notable: "Backbone is lightweight which allows applications to run quickly, and only requires one dependency (Underscore.js)",
+  summary: "Use Backbone to create to create fast single page web applications that don't handle or require a lot of data.",
   language: "JavaScript Library",
   languageSite: "https://vuejs.org/",
   docs: "https://vuejs.org/v2/api/",
   npm: "$ npm install vue",
-  cdn: "<script type = 'text/javascript' src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
-        <script type = 'text/javascript' src = 'https://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js'></script>
-        <script type = 'text/javascript' src = 'https://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js'></script>",
+  cdn: "<script type = 'text/javascript' src = 'https://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js'></script>",
   bower: "",
   github: "https://github.com/jashkenas/backbone",
   twitter: "",
@@ -97,8 +95,8 @@ var backbone = new Framework({
 
 var rails = new Framework({
   title: "Rails",
-  notable: "A lot of scaffolding and structure comes right out of the box, which will minimize your initial set up. Rails also requires strict naming conventions so that it can make assumptions about your web application's behavior, creating less work for you."
-  summary: "Rails provides the structure for an applications database, web service and views. It is designed to be used with the Ruby programming language."
+  notable: "A lot of scaffolding and structure comes right out of the box, which will minimize your initial set up. Rails also requires strict naming conventions so that it can make assumptions about your web application's behavior, creating less work for you.",
+  summary: "Rails provides the structure for an applications database, web service and views. It is designed to be used with the Ruby programming language.",
   language: "Server-side web application",
   languageSite: "http://rubyonrails.org/",
   docs: "http://api.rubyonrails.org/",
