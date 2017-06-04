@@ -14,3 +14,16 @@ app.use(parser.json({extended: true}));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
+
+// Route to access ends index
+app.get("/api/ends", (req, res) => {
+	End.find({}).then(function(ends){
+    res.json(ends);
+    })
+	});
+
+  app.get("/api/ends/:end", (req, res) => {
+  	End.findOne({'type': req.params.type}).then(function(end){
+      res.json(end);
+      })
+  	});
