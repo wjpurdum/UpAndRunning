@@ -3,6 +3,9 @@ const app = express();
 var parser   = require("body-parser");
 var mongoose = require("./db/connection");
 const path = require('path')
+const End = require("./db/connection.js").End;
+const Framework = require("./db/connection.js").Framework;
+
 
 app.listen(4000, () => {
   console.log("app listening on port 4000");
@@ -22,8 +25,14 @@ app.get("/api/ends", (req, res) => {
     })
 	});
 
-  app.get("/api/ends/:end", (req, res) => {
-  	End.findOne({'type': req.params.type}).then(function(end){
+  app.get("/api/ends/:type", (req, res) => {
+  	End.findOne({type: req.params.type}).then(function(end){
       res.json(end);
       })
   	});
+
+    app.get("/api/ends/:type/:title", (req, res) => {
+    	End.findOne({framework: req.params.title}).then(function(end){
+        res.json(end);
+        })
+    	});

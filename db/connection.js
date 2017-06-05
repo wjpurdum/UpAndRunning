@@ -33,9 +33,9 @@ var CommentSchema = new Schema({
   username: String
   });
 
-var End = mongoose.model("End", EndSchema);
-var Framework = mongoose.model("Framework", FrameworkSchema);
-var Comment = mongoose.model("Comment", CommentSchema);
+const End = mongoose.model("End", EndSchema);
+const Framework = mongoose.model("Framework", FrameworkSchema);
+const Comment = mongoose.model("Comment", CommentSchema);
 
 
 db.on('error', function(err){
@@ -47,7 +47,7 @@ db.once('open', function() {
 
 });
 
-module.exports ={
+module.exports = {
   End: End,
   Framework: Framework,
   Comment: Comment

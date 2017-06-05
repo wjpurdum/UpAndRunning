@@ -16,50 +16,77 @@ angular
     FrameworkFactoryFunction
   ])
   .controller("EndIndexController", [
-    "$scope",
-    "EndFactory",
+    "$state",
+    "endFactory",
     EndIndexControllerFunction
   ])
-  .controller("EndShowController", [
-    "$scope",
-    "$http",
-    "EndFactory",
-    "$stateParams",
-    EndShowControllerFunction
-  ])
-  .controller("FrameworkIndexController"), [
-    "FrameworkFactory",
-    FrameworkIndexControllerFunction
-  ]
-  .controller("FrameworkShowController", [
-    "$scope",
-    "$http",
-    "FrameworkFactory",
-    "$stateParams",
-    "$resource",
-    FrameworkShowControllerFunction
-  ])
+  // .controller("EndShowController", [
+  //   "$scope",
+  //   "$http",
+  //   "EndFactory",
+  //   "$stateParams",
+  //   EndShowControllerFunction
+  // ])
+  // .controller("FrameworkIndexController"), [
+  //   "FrameworkFactory",
+  //   FrameworkIndexControllerFunction
+  // ]
+  // .controller("FrameworkShowController", [
+  //   "$scope",
+  //   "$http",
+  //   "FrameworkFactory",
+  //   "$stateParams",
+  //   "$resource",
+  //   FrameworkShowControllerFunction
+  // ])
   function RouterFunction($stateProvider){
     $stateProvider
     .state("endIndex", {
-      url: "/",
-      templateUrl: "js/ng-views/ends/index.html",
+      url: "/ends",
+      templateUrl: "/assets/js/ng-views/ends/index.html",
       controller: "EndIndexController",
-      controller as: "vm"
+      controllerAs: "vm"
     })
-  }
   .state("endShow", {
-    url: "/ends/:id",
-    templateUrl: "js/ng-views/ends/show.html",
+    url: "/ends/:type",
+    templateUrl: "/asssets/js/ng-views/ends/show.html",
     controller: "EndShowController",
     controllerAs: "vm"
   })
-  .state("frameworkIndex", {
-    url: "/ends/:id/frameworks",
-    templateUrl: "js/ng-views/frameworks/index.html",
-    controller: "FrameworkIndexControllerFunction",
-    controllerAs: "vm"
-  })
-  .state("frameworkShow", {
 
-  })
+
+  // .state("frameworkIndex", {
+  //   url: "/ends/:type/frameworks",
+  //   templateUrl: "js/ng-views/frameworks/index.html",
+  //   controller: "FrameworkIndexControllerFunction",
+  //   controllerAs: "vm"
+  // })
+  // .state("frameworkShow", {
+  //   url: "/ends/:type/frameworks/:title",
+  //   templateUrl: "js/ng-views/frameworks/show.html",
+  //   controller: "FrameworkShowController",
+  //   controllerAs: "vm"
+  // })
+}
+
+// link to API
+function EndFactoryFunction($resource){
+  return $resource("/api/ends/:type")
+}
+
+function FrameworkFactoryFunction($resource) {
+  return $resource ("/api/ends/:type/frameworks/:title")
+}
+
+function EndIndexControllerFunction($state, endFactory){
+  console.log("the End Index is firing")
+  this.ends = EndFactoryFunction.query()
+}
+
+function EndShowControllerFunction($state, $stateParams, End){
+  this.end = End.get({id: $stateParams.type})
+}
+
+function FrameworkIndexControllerFunction($resource) {
+  return $resource ("/api/ends/:type/frameworks/:title")
+}
