@@ -1,0 +1,10 @@
+.ends {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-header {
+  text-align: center;
+
+}

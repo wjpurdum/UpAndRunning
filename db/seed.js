@@ -21,8 +21,16 @@ Comment.remove({}, err => {
   }
 });
 
-var frontend = new End({type: "Front End" })
-var backend = new End({type: "Back End" })
+var frontend = new End({
+  type: "Front End",
+  description: "Front End development engineers the look, feel and interactivity of an application or a website. Front End libraries and frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality."  "
+});
+
+var backend = new End({
+  type: "Back End",
+  description: "Back End development engineers "
+
+ })
 
 var angular = new Framework({
   title: "AngularJS",
@@ -110,6 +118,41 @@ var rails = new Framework({
   image: "https://thinkster.io/assets/homepage/rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5.png"
 });
 
+var jquery = new Framework({
+  title: "jQuery",
+  notable: "It is currently the most widely used JavaScript library.",
+  summary: "jQuery provides more streamlined manipulation of DOM elements and AJAX requests. This allows for easier styling, animation and 3rd party API requests.",
+  language: "JavaScript Library",
+  languageSite: "https://jquery.com/",
+  docs: "https://api.jquery.com/",
+  npm: "npm install jquery",
+  cdn: "https://code.jquery.com/",
+  bower: "bower install jquery",
+  github: "https://github.com/jquery/jquery",
+  twitter: "https://twitter.com/jquery?lang=en",
+  assistance: "https://learn.jquery.com/",
+  maintainers: "",
+  image: "https://camo.githubusercontent.com/02ed3f6695f288aedec24c2a329c667281efef5f/687474703a2f2f707265636973696f6e2d736f6674776172652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30342f6a5175726572792e676966"
+})
+
+var express = new Framework({
+  title: "jQuery",
+  notable: "It is currently the most widely used JavaScript library.",
+  summary: "jQuery provides more streamlined manipulation of DOM elements and AJAX requests. This allows for easier styling, animation and 3rd party API requests.",
+  language: "JavaScript Library",
+  languageSite: "https://jquery.com/",
+  docs: "https://api.jquery.com/",
+  npm: "npm install jquery",
+  cdn: "https://code.jquery.com/",
+  bower: "bower install jquery",
+  github: "https://github.com/jquery/jquery",
+  twitter: "https://twitter.com/jquery?lang=en",
+  assistance: "https://learn.jquery.com/",
+  maintainers: "",
+  image: "https://camo.githubusercontent.com/02ed3f6695f288aedec24c2a329c667281efef5f/687474703a2f2f707265636973696f6e2d736f6674776172"
+
+})
+
 var ends = [frontend, backend]
 var frameworks = [angular, react, vue, backbone, rails]
 
@@ -117,6 +160,7 @@ frontend.frameworks.push(angular)
 frontend.frameworks.push(react)
 frontend.frameworks.push(vue)
 frontend.frameworks.push(backbone)
+frontend.frameworks.push(jquery)
 backend.frameworks.push(rails)
 
 ends.forEach((end, i)=> {

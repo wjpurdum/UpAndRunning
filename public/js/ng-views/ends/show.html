@@ -1,8 +1,7 @@
   <h2>{{vm.end.type}}</h2>
-  <div>
-    <section>
-      <select>
-        <p ng-repeat="framework in vm.end.frameworks">
-          {{framework.title}}
-        </p>
-      </select>
+  <div class = "frameworks" data-ng-repeat="framework in vm.end.frameworks">
+      <p>{{framework.title}}</p>
+      <a data-ui-sref="frameworkShow({type: vm.end.type, title: framework.title})">{{framework.title}}</a>
+  </div>
+
+  <p><a ui-sref="teamShow({league_id: vm.league.id, id: fixture.homeTeamId})">{{ fixture.homeTeamName }}</a></p>

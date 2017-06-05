@@ -31,8 +31,20 @@ app.get("/api/ends", (req, res) => {
       })
   	});
 
-    app.get("/api/ends/:type/:title", (req, res) => {
-    	End.findOne({framework: req.params.title}).then(function(end){
+    app.get("/api/ends/:type/title/", (req, res) => {
+    	Framework.find({framework: req.params.title}).then(function(end){
         res.json(end);
         })
     	});
+
+      app.get("/api/ends/:type/frameworks/:title", (req, res) => {
+      	End.findOne({type: req.params.type}).then(function(end){
+          let framework = end.frameworks.find(function(framework){
+            framework.title === req.params.title
+          })
+          res.json(framework)
+          })
+        })
+
+
+  

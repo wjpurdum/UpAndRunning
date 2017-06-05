@@ -20,13 +20,13 @@ angular
     "endFactory",
     EndIndexControllerFunction
   ])
-  // .controller("EndShowController", [
-  //   "$scope",
-  //   "$http",
-  //   "EndFactory",
-  //   "$stateParams",
-  //   EndShowControllerFunction
-  // ])
+  .controller("EndShowController", [
+    "$state",
+    "$stateParams",
+    "endFactory",
+    EndShowControllerFunction
+  ])
+
   // .controller("FrameworkIndexController"), [
   //   "FrameworkFactory",
   //   FrameworkIndexControllerFunction
@@ -49,7 +49,7 @@ angular
     })
   .state("endShow", {
     url: "/ends/:type",
-    templateUrl: "/asssets/js/ng-views/ends/show.html",
+    templateUrl: "/assets/js/ng-views/ends/show.html",
     controller: "EndShowController",
     controllerAs: "vm"
   })
@@ -68,7 +68,6 @@ angular
   //   controllerAs: "vm"
   // })
 }
-
 // link to API
 function EndFactoryFunction($resource){
   return $resource("/api/ends/:type")
@@ -79,14 +78,18 @@ function FrameworkFactoryFunction($resource) {
 }
 
 function EndIndexControllerFunction($state, endFactory){
-  console.log("the End Index is firing")
-  this.ends = EndFactoryFunction.query()
+  console.log("the End Index is firing");
+  this.ends = endFactory.query();
 }
 
-function EndShowControllerFunction($state, $stateParams, End){
-  this.end = End.get({id: $stateParams.type})
+function EndShowControllerFunction($state, $stateParams, endFactory){
+  this.end = endFactory.get({type: $stateParams.type})
 }
 
 function FrameworkIndexControllerFunction($resource) {
   return $resource ("/api/ends/:type/frameworks/:title")
+}
+
+function FrameworkShowControllerFunction($state, $stateParams, frameworkFactory){
+  this.framework = frameworkFactory.get({end: $stateParams.end, title: $stateParams.title})
 }
