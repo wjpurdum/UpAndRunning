@@ -31,14 +31,12 @@ angular
   //   "FrameworkFactory",
   //   FrameworkIndexControllerFunction
   // ]
-  // .controller("FrameworkShowController", [
-  //   "$scope",
-  //   "$http",
-  //   "FrameworkFactory",
-  //   "$stateParams",
-  //   "$resource",
-  //   FrameworkShowControllerFunction
-  // ])
+  .controller("FrameworkShowController", [
+    "$state",
+    "$stateParams",
+    "frameworkFactory",
+    FrameworkShowControllerFunction
+  ])
   function RouterFunction($stateProvider){
     $stateProvider
     .state("endIndex", {
@@ -61,12 +59,12 @@ angular
   //   controller: "FrameworkIndexControllerFunction",
   //   controllerAs: "vm"
   // })
-  // .state("frameworkShow", {
-  //   url: "/ends/:type/frameworks/:title",
-  //   templateUrl: "js/ng-views/frameworks/show.html",
-  //   controller: "FrameworkShowController",
-  //   controllerAs: "vm"
-  // })
+  .state("frameworkShow", {
+    url: "/ends/:type/frameworks/:title",
+    templateUrl: "/assets/js/ng-views/frameworks/show.html",
+    controller: "FrameworkShowController",
+    controllerAs: "vm"
+  })
 }
 // link to API
 function EndFactoryFunction($resource){
@@ -91,5 +89,6 @@ function FrameworkIndexControllerFunction($resource) {
 }
 
 function FrameworkShowControllerFunction($state, $stateParams, frameworkFactory){
-  this.framework = frameworkFactory.get({end: $stateParams.end, title: $stateParams.title})
+  this.framework = frameworkFactory.get({type: $stateParams.type, title: $stateParams.title})
+  console.log(this.framework)
 }

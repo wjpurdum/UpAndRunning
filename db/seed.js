@@ -23,7 +23,7 @@ Comment.remove({}, err => {
 
 var frontend = new End({
   type: "Front End",
-  description: "Front End development engineers the look, feel and interactivity of an application or a website. Front End libraries and frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality."  "
+  description: "Front End development engineers the look, feel and interactivity of an application or a website. Front End libraries and frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality." 
 });
 
 var backend = new End({

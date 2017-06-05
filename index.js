@@ -31,20 +31,18 @@ app.get("/api/ends", (req, res) => {
       })
   	});
 
-    app.get("/api/ends/:type/title/", (req, res) => {
-    	Framework.find({framework: req.params.title}).then(function(end){
-        res.json(end);
-        })
-    	});
+    // app.get("/api/ends/:type/frameworks", (req, res) => {
+    // 	End.findOne({type: req.params.type}).then(function(end){
+    //     var frameworks = end.frameworks.find({})
+    //   })
+    //   res.json(frameworks)
+    // 	});
 
       app.get("/api/ends/:type/frameworks/:title", (req, res) => {
-      	End.findOne({type: req.params.type}).then(function(end){
-          let framework = end.frameworks.find(function(framework){
-            framework.title === req.params.title
+      	End.findOne({type: req.params.type}, function(err, end){
+          let framework = end.frameworks.find((framework) => {
+            return framework.title === req.params.title
           })
           res.json(framework)
-          })
         })
-
-
-  
+      })
