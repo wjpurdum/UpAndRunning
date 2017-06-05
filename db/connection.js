@@ -4,6 +4,10 @@ var db = mongoose.connection;
 
 var Schema = mongoose.Schema;
 
+var CommentSchema = new Schema({
+  link: String,
+  username: String
+  });
 
 var FrameworkSchema = new Schema({
   title: String,
@@ -19,24 +23,18 @@ var FrameworkSchema = new Schema({
   twitter: String,
   assistance: String,
   maintainers: String,
-  image: String
+  image: String,
+  comments: [CommentSchema]
 });
-
 
 var EndSchema = new Schema({
   type: String,
   frameworks: [FrameworkSchema]
 });
 
-var CommentSchema = new Schema({
-  body: String,
-  username: String
-  });
-
 const End = mongoose.model("End", EndSchema);
 const Framework = mongoose.model("Framework", FrameworkSchema);
 const Comment = mongoose.model("Comment", CommentSchema);
-
 
 db.on('error', function(err){
   console.log(err);

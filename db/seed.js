@@ -23,7 +23,7 @@ Comment.remove({}, err => {
 
 var frontend = new End({
   type: "Front End",
-  description: "Front End development engineers the look, feel and interactivity of an application or a website. Front End libraries and frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality." 
+  description: "Front End development engineers the look, feel and interactivity of an application or a website. Front End libraries and frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality."
 });
 
 var backend = new End({
@@ -115,7 +115,8 @@ var rails = new Framework({
   twitter: "https://twitter.com/rails?lang=en",
   assistance: "http://guides.rubyonrails.org/getting_started.html",
   maintainers: "Basecamp",
-  image: "https://thinkster.io/assets/homepage/rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5.png"
+  image: "https://thinkster.io/assets/homepage/rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5.png",
+  comments: [angular_comment]
 });
 
 var jquery = new Framework({
@@ -150,11 +151,17 @@ var express = new Framework({
   assistance: "https://learn.jquery.com/",
   maintainers: "",
   image: "https://camo.githubusercontent.com/02ed3f6695f288aedec24c2a329c667281efef5f/687474703a2f2f707265636973696f6e2d736f6674776172"
+})
+
+var angular_comment = new Comment({
+  link: "https://github.com/wjpurdum/Matchup",
+  username: "wjpurdum"
 
 })
 
 var ends = [frontend, backend]
 var frameworks = [angular, react, vue, backbone, rails]
+var comments = [angular_comment]
 
 frontend.frameworks.push(angular)
 frontend.frameworks.push(react)
@@ -162,6 +169,7 @@ frontend.frameworks.push(vue)
 frontend.frameworks.push(backbone)
 frontend.frameworks.push(jquery)
 backend.frameworks.push(rails)
+
 
 ends.forEach((end, i)=> {
   end.save((err, end)=>{
