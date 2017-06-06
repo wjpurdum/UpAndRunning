@@ -15,6 +15,10 @@ angular
     "$resource",
     FrameworkFactoryFunction
   ])
+  .factory("commentFactory", [
+    "$resource",
+    CommentFactoryFunction
+  ])
   .controller("EndIndexController", [
     "$state",
     "endFactory",
@@ -26,17 +30,14 @@ angular
     "endFactory",
     EndShowControllerFunction
   ])
-
-  // .controller("FrameworkIndexController"), [
-  //   "FrameworkFactory",
-  //   FrameworkIndexControllerFunction
-  // ]
   .controller("FrameworkShowController", [
     "$state",
     "$stateParams",
     "frameworkFactory",
+    "commentFactory",
     FrameworkShowControllerFunction
   ])
+
   function RouterFunction($stateProvider){
     $stateProvider
     .state("endIndex", {
@@ -52,13 +53,6 @@ angular
     controllerAs: "vm"
   })
 
-
-  // .state("frameworkIndex", {
-  //   url: "/ends/:type/frameworks",
-  //   templateUrl: "js/ng-views/frameworks/index.html",
-  //   controller: "FrameworkIndexControllerFunction",
-  //   controllerAs: "vm"
-  // })
   .state("frameworkShow", {
     url: "/ends/:type/frameworks/:title",
     templateUrl: "/assets/js/ng-views/frameworks/show.html",
@@ -75,8 +69,15 @@ function FrameworkFactoryFunction($resource) {
   return $resource ("/api/ends/:type/frameworks/:title")
 }
 
+function CommentFactoryFunction($resource) {
+  return $resource ("/api/ends/:type/frameworks/:title/comments", {}, {
+    update: {method: "PUT"}
+  })
+}
+
+// Controller Functions
+
 function EndIndexControllerFunction($state, endFactory){
-  console.log("the End Index is firing");
   this.ends = endFactory.query();
 }
 
@@ -88,7 +89,13 @@ function FrameworkIndexControllerFunction($resource) {
   return $resource ("/api/ends/:type/frameworks/:title")
 }
 
-function FrameworkShowControllerFunction($state, $stateParams, frameworkFactory){
+function FrameworkShowControllerFunction($state, $stateParams, frameworkFactory, commentFactory){
   this.framework = frameworkFactory.get({type: $stateParams.type, title: $stateParams.title})
-  console.log(this.framework)
+  this.newComment = new commentFactory()
+  this.create = function () {
+    this.newComment.$save().then(function(framework){
+      console.log(this.newComment)
+      $state.go("frameworkShow", {type: $stateParams.type})
+    })
+  }
 }

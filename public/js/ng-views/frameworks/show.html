@@ -1,9 +1,17 @@
 <h1>Why isn't this showing up?</h1>
 <h2>{{vm.framework.title}}</h2>
 
-<div data-ng-repeat="comment in vm.framework.comments">
 
+<p> Commments </p>
+
+<div data-ng-repeat="comment in vm.framework.comments">
     <p>{{comment.link}}</p>
     <p>{{comment.username}}</p>
-
 </div>
+
+
+<div class="post-comment">
+    <input type="text" ng-model="vm.newComment.link" placeholder="GitHub link" />
+    <input type="text" ng-model="vm.newComment.username" placeholder="GitHub username" />
+    <button data-ng-click="vm.create()">Show Your Stuff!</button>
+  </div>

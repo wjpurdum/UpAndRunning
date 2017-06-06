@@ -5,6 +5,7 @@ var mongoose = require("./db/connection");
 const path = require('path')
 const End = require("./db/connection.js").End;
 const Framework = require("./db/connection.js").Framework;
+const Comment = require("./db/connection.js").Comment;
 
 
 app.listen(4000, () => {
@@ -31,14 +32,9 @@ app.get("/api/ends", (req, res) => {
       })
   	});
 
-    // app.get("/api/ends/:type/frameworks", (req, res) => {
-    // 	End.findOne({type: req.params.type}).then(function(end){
-    //     var frameworks = end.frameworks.find({})
-    //   })
-    //   res.json(frameworks)
-    // 	});
 
-      app.get("/api/ends/:type/frameworks/:title", (req, res) => {
+
+    app.get("/api/ends/:type/frameworks/:title", (req, res) => {
       	End.findOne({type: req.params.type}, function(err, end){
           let framework = end.frameworks.find((framework) => {
             return framework.title === req.params.title
@@ -46,3 +42,19 @@ app.get("/api/ends", (req, res) => {
           res.json(framework)
         })
       })
+
+      app.post("/api/ends/:type/frameworks/:title", function(req, res){
+      Comment.create(req.body).then(function(comment){
+      res.json(comment)
+      })
+    });
+
+
+      app.get("/api/ends/:type/frameworks/:title/comments", (req, res) => {
+        	End.findOne({type: req.params.type}, function(err, end){
+            let framework = end.frameworks.find((framework) => {
+              return framework.title === req.params.title
+            })
+            res.json(framework.comments)
+          })
+        })
