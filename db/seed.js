@@ -32,6 +32,11 @@ var backend = new End({
 
  })
 
+ var angular_comment = new Comment({
+   link: "https://github.com/wjpurdum/Matchup",
+   username: "wjpurdum"
+ })
+
 var angular = new Framework({
   title: "AngularJS",
   summary: "Angular allows us to make dynamic views in our applications using two-way databinding. We integrate Angular directly into our HTML to determine components and behaviors.",
@@ -153,11 +158,7 @@ var express = new Framework({
   image: "https://camo.githubusercontent.com/02ed3f6695f288aedec24c2a329c667281efef5f/687474703a2f2f707265636973696f6e2d736f6674776172"
 })
 
-var angular_comment = new Comment({
-  link: "https://github.com/wjpurdum/Matchup",
-  username: "wjpurdum"
 
-})
 
 var ends = [frontend, backend]
 var frameworks = [angular, react, vue, backbone, rails]

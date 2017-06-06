@@ -1,2 +1,9 @@
 <h1>Why isn't this showing up?</h1>
 <h2>{{vm.framework.title}}</h2>
+
+<div data-ng-repeat="comment in vm.framework.comments">
+
+    <p>{{comment.link}}</p>
+    <p>{{comment.username}}</p>
+
+</div>
