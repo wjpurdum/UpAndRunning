@@ -6,16 +6,141 @@ font-family: 'Inconsolata', monospace;*/
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-align: center
+
+}
+
+.intro {
+  font-size: 25px;
+  font-family: 'Pontano Sans', sans-serif;
+  text-align: center;
+  color: #BD2B43;
+  padding: 0  30px 10px 30px
+
+}
+
+img {
+  height: 100px;
+  text-align: center
+}
+
+.ends p {
+  text-align: center;
+  padding: 10px;
+
+}
+
+.end-links {
+  padding: 5px;
+
+}
+
+p.end-links {
+  padding: 0;
+
+}
+
+.end-description {
+  font-family: 'Pontano Sans', sans-serif;
+  padding: 0;
+  font-size: 20px;
+
+}
+
+.ends a {
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Inconsolata', monospace;
+  font-size: 30px;
+  color: white
+}
+
+.section-header {
+  font-family: 'Inconsolata', monospace;
+  font-size: 25px;
+  text-align: center
+}
+
+.end-container {
+  background-color: #BD2B43;
+  color: white
+}
+
+.frameworks {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Pontano Sans', sans-serif;
+  margin: 15px;
+}
+
+.framework-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.framework-row p {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 23px;
+  padding: 10px 15px 10px 20px;
+
+}
+
+.framework-title {
+  text-align: center
+}
+
+.pink {
+  color: #BD2B43;
+}
+
+.framework-summary-text {
+  margin-left: 20px;
+  width: 100%;
+
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-wrapper div {
+  padding: 0 5px 0 5px
+}
+
+.bold {
+
 }
 
 .main-header {
   text-align: center;
   animation: type 7s steps(70, end);
   font-family: 'Inconsolata', monospace;
+  font-size: 35px
 }
 
 .ends p {
   padding: 30px
+}
+
+.framework-image-repeat {
+  width: 175px;
+}
+
+.framework-repeat {
+  padding: 5px;
+  margin: 10px;
+  display: block;
+  border-bottom: 1px solid #BD2B43;
+}
+
+.framework-wrapper {
+  margin: 0 15px 0 15px;
+
 }
 
 #cursor {
@@ -25,6 +150,17 @@ font-family: 'Inconsolata', monospace;*/
 
 @keyframes blink{
   to{opacity: .0;}
+}
+
+donut-chart{
+  width: 500px;
+  height: 500px;
+  display: block;
+  text-align: center
+}
+
+.charts {
+  text-align: center
 }
 
 /*@keyframes type{

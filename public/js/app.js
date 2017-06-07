@@ -38,6 +38,33 @@ angular
     "commentFactory",
     FrameworkShowControllerFunction
   ])
+  .directive('donutChart', function(){
+    function link(scope, el){
+      var data = [23, 75, 40, 10, 3]
+      var color = d3.scale.category10()
+      var el = el[0]
+      var width = el.clientWidth
+      var height = el.clientHeight
+      var min = Math.min(width, height)
+      var pie = d3.layout.pie().sort(null)
+      var arc = d3.svg.arc()
+        .outerRadius(min/2 * 0.9)
+        .innerRadius(min/2 * 0.5)
+      var svg = d3.select(el).append('svg')
+        .attr({width: width, height: height})
+        .append('g')
+          .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')')
+        svg.selectAll('path').data(pie(data))
+          .enter().append('path')
+            .style('stroke', 'white')
+            .attr('d', arc)
+            .attr('fill', function(d, i){return color(i)})
+    }
+    return {
+      link: link,
+      restrict: 'E',
+    }
+  })
 
   function RouterFunction($stateProvider){
     $stateProvider
@@ -71,7 +98,7 @@ function FrameworkFactoryFunction($resource) {
 }
 
 function CommentFactoryFunction($resource) {
-  return $resource ("/api/ends/:type/frameworks/:title", {}, {
+  return $resource ("/api/ends/:type/frameworks/:title/comments", {}, {
     update: {method: "PUT"}
   })
 }
@@ -100,7 +127,7 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
     newComment.link = this.newComment.link
     newComment.username = this.newComment.username
     console.log(newComment)
-    newComment.$save({type: $stateParams.type, framework: $stateParams.title}).then(function(){
+    newComment.$save({type: $stateParams.type, title: $stateParams.title}).then(function(){
       $state.reload
       })
     // }

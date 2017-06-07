@@ -1,10 +1,17 @@
 <section>
-  <h2>Frontend or Backend?</h2>
+  <h2 class="intro">Web frameworks help developers write  more efficient and dynamic code. But which one to choose? Decide if you are in need of a back-end or front-end framework, and then <span class="bold">get up and running</span>!</h2>
   <div class="end-container">
     <div class = "ends" data-ng-repeat="end in vm.ends">
-        <a data-ui-sref="endShow({type: end.type})">{{end.type}}</a>
-        <p> {{end.description}}</p>
+        <p class="end-links"><a data-ui-sref="endShow({type: end.type})">{{end.type}}(go =>)</a></p>
+        <img src={{end.icon}}></img>
+        <p class="end-description"> {{end.description}}</p>
         {{end.logo}}
     </div>
   </div>
+  <!-- <div class="donut-chart"> -->
+
+  <!-- </div> -->
 </section>
+<div class="charts">
+  <donut-chart></donut-chart>
+</div>

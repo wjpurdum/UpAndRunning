@@ -58,20 +58,32 @@ app.get("/api/ends", (req, res) => {
       //   })
       // })
 
+      // app.post("/api/ends/:type/frameworks/:title/comments", function(req, res){
+      //   End.findOne({type: req.params.type}, (function(err, end){
+      //     let framework = end.frameworks.find((framework)=> {
+      //       return framework.title = req.params.title
+      //       Comment.create({link: req.body.link, username: req.body.username}).then(function(comment){
+      //         framework.comments.push(comment)
+      //         framework.comments.save(function(comment){
+      //           res.json(comment)
+      //           console.log(comment)
+      //         })
+      //       })
+      //     })
+      //   }))
+      // })
+
       app.post("/api/ends/:type/frameworks/:title/comments", function(req, res){
-        End.findOne({type: req.params.type}.then(function(err, end){
-          let framework = end.frameworks.find((framework)=> {
-            return framework.title = req.params.title
-            Comment.create({link: req.body.link, username: req.body.username}).then(function(comment){
-              framework.comments.push(comment)
-              framework.comments.save(function(comment){
-                res.json(comment)
-                console.log(comment)
-              })
-            })
-          })
-        }))
+      End.findOne({type: req.params.type}).then(function(end){
+        let framework = end.frameworks.find((framework)=> {
+          return framework.title == req.params.title
+        })
+        framework.comments.push({link: req.body.link, username: req.body.username})
+        end.save().then(function(end) {
+          res.json(end)
+        })
       })
+    })
 
 
 

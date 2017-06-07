@@ -23,12 +23,12 @@ Comment.remove({}, err => {
 
 var frontend = new End({
   type: "Front End",
-  description: "Front End development engineers build elements that the user sees - the look, feel and interactivity of an application or a website. Front End libraries and frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality.",
-  icon: "https://image.freepik.com/free-icon/black-iscreen-computer_318-9552.jpg"
+  description: "Front End development engineers build elements that the user sees - the look, feel and interactivity of an application or a website. Front End frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality.",
+  icon: "https://d30y9cdsu7xlg0.cloudfront.net/png/3281-200.png"
 });
 var backend = new End({
   type: "Back End",
-  description: "Back End development engineers build functionality that a user does not see - the transfer of data between the user and the server and underlying database. Backend frameworks allow developers to use simpler code, allowing for faster development and more collaboration.",
+  description: "Back End development engineers build functionality that a user does not see - the transfer of data between the user and the server and underlying database. Backend frameworks allow developers to use simpler code, allowing for faster and more collaborative development.",
   icon: "https://maxcdn.icons8.com/Share/icon/dotty/Network//server1600.png"
  })
  var angular_comment = new Comment({
@@ -50,7 +50,7 @@ var angular = new Framework({
   twitter: "https://twitter.com/angularjs_io",
   assistance: "https://docs.angularjs.org/tutorial",
   maintainers: "Google",
-  image: "https://angular.io/resources/images/logos/angular/angular.svg"
+  image: "http://codecondo.com/wp-content/uploads/2015/05/15-Directives-to-Extend-Your-Angular.js-Apps.jpg?x94435"
 });
 
 var react = new Framework({
@@ -67,7 +67,7 @@ var react = new Framework({
   twitter: "https://twitter.com/reactjs",
   assistance: "https://facebook.github.io/react/tutorial/tutorial.html",
   maintainers: "Facebook, Instagram",
-  image: "https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png"
+  image: "https://cdn-images-1.medium.com/max/640/1*XaGxIa_JuHc8YTR5Znv6tg.png"
 });
 
 var vue = new Framework({
@@ -84,7 +84,7 @@ var vue = new Framework({
   twitter: "https://twitter.com/vuejs",
   assistance: "https://vuejs.org/v2/guide/",
   maintainers: "",
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/215px-Vue.png"
+  image: "https://coligo.io/vuejs-the-basics/cover-850x416.jpg"
 });
 
 
@@ -102,7 +102,7 @@ var backbone = new Framework({
   twitter: "",
   assistance: "",
   maintainers: "Jeremy Ashkenas",
-  image: "http://file.mrbool.com/mrbool/articles/MuhammadAzamuddin/BackBoneEvents/BackBoneEvents01.png"
+  image: "http://www.korenlc.com/wp-content/uploads/2014/09/backbone-js.gif"
 });
 
 var rails = new Framework({
@@ -119,7 +119,7 @@ var rails = new Framework({
   twitter: "https://twitter.com/rails?lang=en",
   assistance: "http://guides.rubyonrails.org/getting_started.html",
   maintainers: "Basecamp",
-  image: "https://thinkster.io/assets/homepage/rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5.png",
+  image: "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/158/Ruby_on_Rails_2-512.png",
   comments: [angular_comment]
 });
 
@@ -137,8 +137,9 @@ var jquery = new Framework({
   twitter: "https://twitter.com/jquery?lang=en",
   assistance: "https://learn.jquery.com/",
   maintainers: "",
-  image: "https://camo.githubusercontent.com/02ed3f6695f288aedec24c2a329c667281efef5f/687474703a2f2f707265636973696f6e2d736f6674776172652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30342f6a5175726572792e676966"
+  image: "http://www.logoeps.com/wp-content/uploads/2011/08/jquery-logo.jpg"
 })
+
 
 var express = new Framework({
   title: "jQuery",
@@ -195,7 +196,7 @@ var express = new Framework({
 var flask = new Framework({
   title: "Flask",
   notable: "According to GitHub statistics, Flask is the most popular Python web framework.",
-  summary: "INSERT THIS!",
+  summary: "Lorem ipsum dolor sit amet, nec quam aliquam quam, donec vivamus aenean orci, morbi sit tempus eget duis vestibulum risus. In ut, ut neque, mi tristique a ipsum. Feugiat non hymenaeos elit proin dapibus, rhoncus mauris sit dui cursus diam. Hymenaeos id ultricies, pulvinar ac",
   language: "Python Web Framework",
   languageSite: "http://flask.pocoo.org/",
   docs: "http://flask.pocoo.org/docs/0.12/",
@@ -223,7 +224,7 @@ var meteor = new Framework({
   twitter: "https://twitter.com/meteorjs",
   assistance: "https://www.meteor.com/tutorials",
   maintainers: "Meteor Development Group",
-  image: "https://skippy.org.uk/wp-content/uploads/Flask.jpg"
+  image: "https://shmck.herokuapp.com/content/images/2015/07/meteor.png"
 })
 
 
@@ -237,6 +238,10 @@ frontend.frameworks.push(vue)
 frontend.frameworks.push(backbone)
 frontend.frameworks.push(jquery)
 backend.frameworks.push(rails)
+backend.frameworks.push(meteor)
+backend.frameworks.push(flask)
+backend.frameworks.push(express)
+backend.frameworks.push(django)
 
 
 ends.forEach((end, i)=> {
