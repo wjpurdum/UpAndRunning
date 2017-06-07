@@ -33,6 +33,7 @@ angular
   .controller("FrameworkShowController", [
     "$state",
     "$stateParams",
+    "endFactory",
     "frameworkFactory",
     "commentFactory",
     FrameworkShowControllerFunction
@@ -70,7 +71,7 @@ function FrameworkFactoryFunction($resource) {
 }
 
 function CommentFactoryFunction($resource) {
-  return $resource ("/api/ends/:type/frameworks/:title/comments", {}, {
+  return $resource ("/api/ends/:type/frameworks/:title", {}, {
     update: {method: "PUT"}
   })
 }
@@ -89,13 +90,19 @@ function FrameworkIndexControllerFunction($resource) {
   return $resource ("/api/ends/:type/frameworks/:title")
 }
 
-function FrameworkShowControllerFunction($state, $stateParams, frameworkFactory, commentFactory){
+function FrameworkShowControllerFunction($state, $stateParams, endFactory, frameworkFactory, commentFactory){
+  this.end = endFactory.get({type: $stateParams.type})
   this.framework = frameworkFactory.get({type: $stateParams.type, title: $stateParams.title})
-  this.newComment = new commentFactory()
-  this.create = function () {
-    this.newComment.$save().then(function(framework){
-      console.log(this.newComment)
-      $state.go("frameworkShow", {type: $stateParams.type})
-    })
+  this.create = function(){
+    console.log("click submitting")
+    let newComment = new commentFactory()
+    // this.newComment.create = function(){
+    newComment.link = this.newComment.link
+    newComment.username = this.newComment.username
+    console.log(newComment)
+    newComment.$save({type: $stateParams.type, framework: $stateParams.title}).then(function(){
+      $state.reload
+      })
+    // }
   }
 }

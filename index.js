@@ -43,11 +43,37 @@ app.get("/api/ends", (req, res) => {
         })
       })
 
-      app.post("/api/ends/:type/frameworks/:title", function(req, res){
-      Comment.create(req.body).then(function(comment){
-      res.json(comment)
+      // app.post("/api/ends/:type/frameworks/:title/comments", function(req, res){
+      //   End.findOne({type: req.params.type}.then(function(err, end){
+      //     let framework = end.frameworks.find((framework)=> {
+      //       return framework.title = req.params.title
+      //       Comment.create({link: req.body.link, username: req.body.username}).then(function(comment){
+      //         framework.comments.push(comment)
+      //         framework.comments.save(function(framework){
+      //           res.json(comment)
+      //           console.log(framework)
+      //         })
+      //       })
+      //     }))
+      //   })
+      // })
+
+      app.post("/api/ends/:type/frameworks/:title/comments", function(req, res){
+        End.findOne({type: req.params.type}.then(function(err, end){
+          let framework = end.frameworks.find((framework)=> {
+            return framework.title = req.params.title
+            Comment.create({link: req.body.link, username: req.body.username}).then(function(comment){
+              framework.comments.push(comment)
+              framework.comments.save(function(comment){
+                res.json(comment)
+                console.log(comment)
+              })
+            })
+          })
+        }))
       })
-    });
+
+
 
 
       app.get("/api/ends/:type/frameworks/:title/comments", (req, res) => {
@@ -58,3 +84,20 @@ app.get("/api/ends", (req, res) => {
             res.json(framework.comments)
           })
         })
+
+        // app.get("/api/ends/:type/frameworks/:title/comments/:id", (req, res) => {
+        //     Framework.findOne({title: req.params.type}), function(err, framework){
+        //       let comments = framework.comments.find
+        //       for (var i = 0; i<framework.comments.length; i++) {
+        //         if framework.comments[i].id === req.params.id {
+        //           res.json(framework.comments[i])
+        //         }
+        //       }
+        //     }
+          //   Comment.findOne({id: req.params.id}, function(err, end){
+          //     let framework = end.frameworks.find((framework) => {
+          //       return framework.title === req.params.title
+          //     })
+          //     res.json(framework.comments)
+          //   })
+          // })

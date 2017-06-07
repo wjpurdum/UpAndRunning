@@ -1,9 +1,10 @@
 <section>
   <h2>Frontend or Backend?</h2>
-
-  <div class = "ends" data-ng-repeat="end in vm.ends">
-
-      <a data-ui-sref="endShow({type: end.type})">{{end.type}}</a>
-    
+  <div class="end-container">
+    <div class = "ends" data-ng-repeat="end in vm.ends">
+        <a data-ui-sref="endShow({type: end.type})">{{end.type}}</a>
+        <p> {{end.description}}</p>
+        {{end.logo}}
+    </div>
   </div>
 </section>

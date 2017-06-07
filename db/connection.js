@@ -29,6 +29,8 @@ var FrameworkSchema = new Schema({
 
 var EndSchema = new Schema({
   type: String,
+  description: String,
+  icon: String,
   frameworks: [FrameworkSchema]
 });
 
