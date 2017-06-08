@@ -58,7 +58,8 @@ p.end-links {
 .section-header {
   font-family: 'Inconsolata', monospace;
   font-size: 25px;
-  text-align: center
+  text-align: center;
+  cursor: pointer
 }
 
 .end-container {
@@ -73,11 +74,23 @@ p.end-links {
   margin: 15px;
 }
 
-.framework-row {
+a {
+  text-decoration: none;
+  color: white
+}
+
+.documentation {
   display: flex;
   flex-direction: row;
-  align-items: center
+  justify-content: space-around;
+  align-items: center;
+  background-color: #BD2B43;
+  color: white;
+  font-size: 20px;
+  font-family: 'Pontano Sans', sans-serif;
 }
+
+
 
 .framework-row p {
   margin-left: 10px;
@@ -87,9 +100,68 @@ p.end-links {
 
 }
 
+.maintainers {
+  text-align: center
+}
+
+.install-instructions {
+  background-color: #F0F0F0;
+  color: black;
+  font-family: monospace;
+  margin: 0 40px 0 40px
+}
+
+.install-instructions p {
+  /*padding: 10px;*/
+  font-size: 20px
+}
+
+.about-framework {
+  font-family: 'Pontano Sans', sans-serif;
+  /*text-align: center;*/
+  font-size: 20px;
+  padding: 15px;
+  background-color: #BD2B43;
+  color: white
+}
+
+h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #BD2B43;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+.notable {
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
+.logo-wrapper {
+  text-align: center
+
+}
+
 .framework-title {
   text-align: center
 }
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  text-align: center
+}
+
+i {
+padding: 15px;
+font-size: 30px;
+text-align: center
+}
+
+
 
 .pink {
   color: #BD2B43;

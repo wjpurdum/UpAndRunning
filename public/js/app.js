@@ -121,7 +121,6 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
   this.end = endFactory.get({type: $stateParams.type})
   this.framework = frameworkFactory.get({type: $stateParams.type, title: $stateParams.title})
   this.create = function(){
-    console.log("click submitting")
     let newComment = new commentFactory()
     // this.newComment.create = function(){
     newComment.link = this.newComment.link

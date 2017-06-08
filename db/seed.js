@@ -50,7 +50,7 @@ var angular = new Framework({
   twitter: "https://twitter.com/angularjs_io",
   assistance: "https://docs.angularjs.org/tutorial",
   maintainers: "Google",
-  image: "http://codecondo.com/wp-content/uploads/2015/05/15-Directives-to-Extend-Your-Angular.js-Apps.jpg?x94435"
+  image: "https://camo.githubusercontent.com/1e69ab49e036e577d4c651ebe8a7e43c95fb34a3/68747470733a2f2f616e67756c61726a732e6f72672f696d672f416e67756c61724a532d6c617267652e706e67"
 });
 
 var react = new Framework({
@@ -217,14 +217,14 @@ var meteor = new Framework({
   language: "JavaScript Web Framework for NodeJS",
   languageSite: "https://www.meteor.com/",
   docs: "http://docs.meteor.com/?_ga=2.150103921.696531184.1496777033-1092281208.1495631233#/full/",
-  npm: "curl https://install.meteor.com/ | sh",
+  npm: "$npm install -g meteor-npm #single time operation $meteor-npm #type inside your project",
   cdn: "",
   bower: "",
   github: "https://github.com/meteor/meteor",
   twitter: "https://twitter.com/meteorjs",
   assistance: "https://www.meteor.com/tutorials",
   maintainers: "Meteor Development Group",
-  image: "https://shmck.herokuapp.com/content/images/2015/07/meteor.png"
+  image: "https://d14xs1qewsqjcd.cloudfront.net/assets/og-image-logo.png"
 })
 
 

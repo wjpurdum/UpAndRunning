@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 var parser   = require("body-parser");
 var mongoose = require("./db/connection");
+var passport = require ('passport')
 const path = require('path')
 const End = require("./db/connection.js").End;
 const Framework = require("./db/connection.js").Framework;
@@ -14,6 +15,8 @@ app.listen(4000, () => {
 
 app.use("/assets", express.static("public"));
 app.use(parser.json({extended: true}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
