@@ -31,25 +31,29 @@
     <p><a href={{vm.framework.docs}}>Primary Docs</a></p>
   </div>
   <div>
-    <p><a href={{vm.framework.assistance}}>Do a tutorial</a></p>
+    <p><a href={{vm.framework.assistance}}>Do a guided tutorial</a></p>
   </div>
   <div>
     <p><a href={{vm.framework.github}}>See the source code on GitHub</a></p>
   </div>
 </div>
 
+<section class="show-code">
 <h3> Show Your Code </h3>
 
 <p> If you've done a project in {{vm.framework.title}}, and you want to show your code, post a link to your repo below!</p>
 
-<div data-ng-repeat="comment in vm.framework.comments">
-    <p>{{comment.link}}</p>
-    <p>{{comment.username}}</p>
-</div>
-
-
 <div class="post-comment">
     <input type="text" ng-model="vm.newComment.link" placeholder="GitHub link" />
     <input type="text" ng-model="vm.newComment.username" placeholder="GitHub username" />
-    <button data-ng-click="vm.create()">Show Your Stuff!</button>
-  </div>
+</div>
+<div class="maintainers">
+  <button data-ng-click="vm.create()">Show Your Stuff</button>
+</div>
+
+<div class='comments' data-ng-repeat="comment in vm.framework.comments">
+    <p>GitHub User: {{comment.username}}</p>
+    <p><a src={{comment.link}}>{{comment.link}}</a></p>
+</div>
+
+</section>
