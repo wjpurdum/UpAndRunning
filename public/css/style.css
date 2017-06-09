@@ -147,7 +147,7 @@ button {
 .framework-row p {
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 23px;
+  font-size: 20px;
   padding: 10px 15px 10px 20px;
 
 }
@@ -191,6 +191,13 @@ h3 {
 .notable {
   text-align: center;
   font-size: 20px;
+}
+
+.learn-more {
+  font-size: 20px;
+  text-align: center;
+  color: #3F51B5;
+  font-weight: bold
 }
 
 
@@ -256,7 +263,7 @@ text-align: center
 }
 
 .framework-image-repeat {
-  width: 175px;
+  /*width: 175px;*/
 }
 
 .framework-repeat {
