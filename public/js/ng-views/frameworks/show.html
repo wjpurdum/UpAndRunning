@@ -54,6 +54,7 @@
 <div class='comments' data-ng-repeat="comment in vm.framework.comments">
     <p>GitHub User: {{comment.username}}</p>
     <p><a src={{comment.link}}>{{comment.link}}</a></p>
+    <button ng-click="vm.destroy()">Delete Comment</button>
 </div>
 
 </section>

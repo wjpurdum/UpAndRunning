@@ -51,6 +51,24 @@ app.get("/api/ends", (req, res) => {
         })
       })
 
+  // Delete Comment
+//   app.delete("/api/ends/:type/frameworks/:title", (req, res) => {
+// 	End.findOne({type: req.params.type}).then(function(end){
+// 		let framework = end.frameworks.find((framework) => {
+// 			return framework.title === req.params.title
+// 		});
+// 		for(let i=0; i < end.frameworks.commments.length; i++){
+// 			if(user.accounts[i].id == account.id){
+// 				user.accounts.splice(i, 1)
+// 			}
+// 		}
+// 		user.current_funds = user.current_funds + account.current_amount;
+// 		user.save().then(function(){
+// 				res.json({success: true})
+// 		});
+// 	});
+// });
+
 
       app.post("/api/ends/:type/frameworks/:title/comments", function(req, res){
       End.findOne({type: req.params.type}).then(function(end){

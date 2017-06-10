@@ -210,8 +210,13 @@ h3 {
 .learn-more {
   font-size: 20px;
   text-align: center;
-  color: #3F51B5;
-  font-weight: bold
+  color: white;
+  background-color: #3F51B5;
+  font-weight: bold;
+  border: 1px solid #3F51B5;
+  width: 200px;
+  text-align: center;
+  border-radius: 8px;
 }
 
 

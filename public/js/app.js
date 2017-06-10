@@ -127,7 +127,7 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
     newComment.username = this.newComment.username
     console.log(newComment)
     newComment.$save({type: $stateParams.type, title: $stateParams.title}).then(function(){
-      $state.reload
+      $state.reload()
       })
     // }
   }
