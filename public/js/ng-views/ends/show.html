@@ -4,9 +4,14 @@
   <div><h2 class="section-header"><span class="pink">on the {{vm.end.type}}</span> </h2></div>
 </div>
 
+<section class="search">
+  <h2>Search Frameworks</h2>
+  <br>
+  <input type="text" ng-model="searchframeworks.titles">
+</section>
 
 <div class="framework-wrapper">
-  <div class = "frameworks" data-ng-repeat="framework in vm.end.frameworks">
+  <div class = "frameworks" data-ng-repeat="framework in vm.end.frameworks | filter: searchframeworks.titles">
     <div class = "framework-repeat">
       <div class="framework-row">
         <div class="framework-image">
