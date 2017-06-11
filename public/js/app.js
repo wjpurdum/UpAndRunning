@@ -62,7 +62,7 @@ angular
     }
     return {
       link: link,
-      restrict: 'E',
+      restrict: 'EA',
     }
   })
 
@@ -126,7 +126,7 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
     newComment.link = this.newComment.link
     newComment.username = this.newComment.username
     console.log(newComment)
-    newComment.$save({type: $stateParams.type, title: $stateParams.title}).then(function(){
+    newComment.$save({type: $stateParams.type, title: $stateParams.title}).then(function(framework){
       $state.reload()
       })
     // }

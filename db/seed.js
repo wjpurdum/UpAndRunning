@@ -21,9 +21,11 @@ Comment.remove({}, err => {
   }
 });
 
+
+
 var frontend = new End({
   type: "Front End",
-  description: "Front End development engineers build elements that the user sees - the look, feel and interactivity of an application or a website. Front End frameworks are ready-made libraries or components that a developer can use to give the project more structure or functionality.",
+  description: "Front End development engineers build elements that the user sees - the look, feel and interactivity of an application or a website. Front End frameworks are ready-made libraries or components that give the code more structure, organization or functionality.",
   icon: "https://d30y9cdsu7xlg0.cloudfront.net/png/3281-200.png"
 });
 var backend = new End({

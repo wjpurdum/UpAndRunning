@@ -8,13 +8,13 @@
 </div>
 
 <section class = "about-framework">
-<p>{{vm.framework.summary}}</p>
+  <p>{{vm.framework.summary}}</p>
 <!-- <div class="center"> -->
   <p class='maintainers'>{{vm.framework.title}} is currently maintained by {{vm.framework.maintainers}}</p>
 <!-- </div> -->
-<div class="notable">
-  <h2 class="notable-header">What's so great about it?</h2>
-</div>
+  <div class="notable">
+    <h2 class="notable-header">What's so great about it?</h2>
+  </div>
 <p>{{vm.framework.notable}}</p>
 </section>
 
@@ -28,7 +28,7 @@
 <h3>Read the Documentation</h3>
 <div class="documentation">
   <div>
-    <p><a href={{vm.framework.docs}}>Primary Docs</a></p>
+    <p><a href={{vm.framework.docs}}>Primary Documentation</a></p>
   </div>
   <div>
     <p><a href={{vm.framework.assistance}}>Do a guided tutorial</a></p>
@@ -41,7 +41,7 @@
 <section class="show-code">
 <h3> Show Your Code </h3>
 
-<p> If you've done a project in {{vm.framework.title}}, and you want to show your code, post a link to your repo below!</p>
+<p> If you've done a project in {{vm.framework.title}}, and you want to show your code, post a link to your repo below:</p>
 
 <div class="post-comment">
     <input type="text" ng-model="vm.newComment.link" placeholder="GitHub link" />
@@ -51,9 +51,11 @@
   <button data-ng-click="vm.create()">Show Your Stuff</button>
 </div>
 
+<hr>
+
 <div class='comments' data-ng-repeat="comment in vm.framework.comments">
-    <p>GitHub User: {{comment.username}}</p>
-    <p><a src={{comment.link}}>{{comment.link}}</a></p>
+    <p><span class="underline">GitHub User:</span> {{comment.username}}</p>
+    <p>{{comment.link}}</p>
     <button ng-click="vm.destroy()">Delete Comment</button>
 </div>
 

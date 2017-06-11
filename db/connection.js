@@ -1,7 +1,6 @@
 var mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost/UpAndRunning');
 var db = mongoose.connection;
-
 var Schema = mongoose.Schema;
 
 var CommentSchema = new Schema({
@@ -31,6 +30,10 @@ var EndSchema = new Schema({
   type: String,
   description: String,
   icon: String,
+  // data: {
+  //   name: String,
+  //   number: Number,
+  // },
   frameworks: [FrameworkSchema]
 });
 
