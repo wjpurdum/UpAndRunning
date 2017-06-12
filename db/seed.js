@@ -26,13 +26,40 @@ Comment.remove({}, err => {
 var frontend = new End({
   type: "Front End",
   description: "Front End development engineers build elements that the user sees - the look, feel and interactivity of an application or a website. Front End frameworks are ready-made libraries or components that give the code more structure, organization or functionality.",
-  icon: "https://d30y9cdsu7xlg0.cloudfront.net/png/3281-200.png"
+  icon: "https://d30y9cdsu7xlg0.cloudfront.net/png/3281-200.png",
+  data: [
+    {
+    name: "Angular",
+    number: 6000
+  },
+    {name: "JQuery",
+    number: 4000
+  },
+  {
+    name: "Vue",
+    number: 500
+  }
+  ]
 });
 var backend = new End({
   type: "Back End",
   description: "Back End development engineers build functionality that a user does not see - the transfer of data between the user and the server and underlying database. Backend frameworks allow developers to use simpler code, allowing for faster and more collaborative development.",
-  icon: "https://maxcdn.icons8.com/Share/icon/dotty/Network//server1600.png"
- })
+  icon: "https://maxcdn.icons8.com/Share/icon/dotty/Network//server1600.png",
+  data: [
+    {
+    name: "Django",
+    number: 6000
+  },
+    {name: "Flask",
+    number: 4000
+  },
+  {
+    name: "Rails",
+    number: 500
+  }
+  ]
+});
+
  var angular_comment = new Comment({
    link: "https://github.com/wjpurdum/Matchup",
    username: "wjpurdum"

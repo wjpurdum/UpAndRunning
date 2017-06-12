@@ -82,6 +82,22 @@ app.get("/api/ends", (req, res) => {
       })
     })
 
+    // delete comment
+    app.delete("/api/ends/:type/frameworks/:title/comments", (req, res)=> {
+      var link = req.body.link
+      End.findOne({type: req.params.type}, function(err, end){
+        let framework = end.framework.find((framework)=> {
+          return framework.title === req.params.title
+        })
+          for (let i=0; i<end.frameworks.comments.length; i++){
+            if (end.frameworks.comments[i].link===link){
+              end.frameworks.comments.splice(i, 1)
+            }
+          }
+      })
+    })
+
+
       app.get("/api/ends/:type/frameworks/:title/comments", (req, res) => {
         	End.findOne({type: req.params.type}, function(err, end){
             let framework = end.frameworks.find((framework) => {

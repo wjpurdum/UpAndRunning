@@ -30,10 +30,10 @@ var EndSchema = new Schema({
   type: String,
   description: String,
   icon: String,
-  // data: {
-  //   name: String,
-  //   number: Number,
-  // },
+  data: [{
+    name: String,
+    number: Number,
+  }],
   frameworks: [FrameworkSchema]
 });
 

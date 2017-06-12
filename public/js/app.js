@@ -25,6 +25,7 @@ angular
     EndIndexControllerFunction
   ])
   .controller("EndShowController", [
+    // "$scope",
     "$state",
     "$stateParams",
     "endFactory",
@@ -40,25 +41,14 @@ angular
   ])
   .directive('donutChart', function(){
     function link(scope, el){
-      var data = [{title: "Angular",
-                    popularity: 23},
-                    {
-                      title: "JQuery",
-                    popularity: 106
-                    },
-                    {title: ""
-
-                    }
-
-
-
-                    23, 75, 40, 10, 3]
+      var data = scope.data
       var color = d3.scale.category10()
       var el = el[0]
       var width = el.clientWidth
       var height = el.clientHeight
       var min = Math.min(width, height)
-      var pie = d3.layout.pie().sort(null)
+      var pie = d3.layout.pie()
+        .value(function(d) {return d.number;})(data);
       var arc = d3.svg.arc()
         .outerRadius(min/2 * 0.9)
         .innerRadius(min/2 * 0.5)
@@ -69,19 +59,20 @@ angular
         .attr({width: width, height: height})
         .append('g')
           .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')')
-        svg.selectAll('path').data(pie(data))
+        svg.selectAll('path').data(pie(data.number))
           .enter().append('path')
             .style('stroke', 'white')
             .attr('d', arc)
             .attr('fill', function(d, i){return color(i)})
             .append("text")
               .attr("transform", function(d) {return "translate(" + labelArc.centroid(d)+ ")"; })
-              .text(function(d) {return d.data.framework;})
+              .text(function(d) {return d.data.name;})
               .style("fill", "#fff");
     }
     return {
       link: link,
-      restrict: 'EA',
+      restrict: 'E',
+      scope: {data: '='}
     }
   })
 
@@ -149,5 +140,17 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
       $state.reload()
       })
     // }
+  }
+  this.destroy=function(idx){
+    console.log("delete click registering!")
+    var comment_to_delete = this.framework.comments[idx]
+    console.log(comment_to_delete)
+    // console.log(comment_to_delete.link)
+    // // comment_to_delete.link = this.comment_to_delete.link
+    // // comment_to_delete.username = this.comment_to_delete.username
+    // console.log(this.comment_to_delete.link)
+    this.framework.comments[idx].$delete({type: $stateParams.type, title: $stateParams.title}).then(function(framework){
+      $state.reload()
+    })
   }
 }
