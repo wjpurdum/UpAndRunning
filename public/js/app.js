@@ -132,25 +132,26 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
   this.framework = frameworkFactory.get({type: $stateParams.type, title: $stateParams.title})
   this.create = function(){
     let newComment = new commentFactory()
-    // this.newComment.create = function(){
     newComment.link = this.newComment.link
     newComment.username = this.newComment.username
     console.log(newComment)
     newComment.$save({type: $stateParams.type, title: $stateParams.title}).then(function(framework){
       $state.reload()
       })
-    // }
   }
   this.destroy=function(idx){
     console.log("delete click registering!")
     var comment_to_delete = this.framework.comments[idx]
     console.log(comment_to_delete)
+    this.framework.comments.splice(idx, 1).then(function(framework){
+      $state.reload()
+    })
+  }
     // console.log(comment_to_delete.link)
     // // comment_to_delete.link = this.comment_to_delete.link
     // // comment_to_delete.username = this.comment_to_delete.username
     // console.log(this.comment_to_delete.link)
-    this.framework.comments[idx].$delete({type: $stateParams.type, title: $stateParams.title}).then(function(framework){
-      $state.reload()
-    })
+    // this.framework.comments[idx].$delete({type: $stateParams.type, title: $stateParams.title}).then(function(framework){
+    //   $state.reload()
+    // })
   }
-}
