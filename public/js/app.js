@@ -139,19 +139,16 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
       $state.reload()
       })
   }
+  // Delete Comment
   this.destroy=function(idx){
+    let comment_to_delete = new commentFactory()
+    https://stackoverflow.com/questions/31315210/delete-restful-method-with-angularjs-resource
     console.log("delete click registering!")
     var comment_to_delete = this.framework.comments[idx]
     console.log(comment_to_delete)
+    // take out the then
     this.framework.comments.splice(idx, 1).then(function(framework){
       $state.reload()
     })
-  }
-    // console.log(comment_to_delete.link)
-    // // comment_to_delete.link = this.comment_to_delete.link
-    // // comment_to_delete.username = this.comment_to_delete.username
-    // console.log(this.comment_to_delete.link)
-    // this.framework.comments[idx].$delete({type: $stateParams.type, title: $stateParams.title}).then(function(framework){
-    //   $state.reload()
-    // })
+    }
   }

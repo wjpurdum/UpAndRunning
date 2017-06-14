@@ -1,9 +1,9 @@
-var cool = require('cool-ascii-faces');
+const cool = require('cool-ascii-faces');
 const express = require("express");
 const app = express();
-var parser   = require("body-parser");
+const parser   = require("body-parser");
 var mongoose = require("./db/connection");
-var passport = require ('passport')
+const passport = require ('passport')
 const path = require('path')
 const End = require("./db/connection.js").End;
 const Framework = require("./db/connection.js").Framework;
@@ -19,6 +19,7 @@ app.use(parser.json({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Allows you to have index.html as root view
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -34,42 +35,24 @@ app.get("/api/ends", (req, res) => {
     })
 	});
 
-  app.get("/api/ends/:type", (req, res) => {
-  	End.findOne({type: req.params.type}).then(function(end){
-      res.json(end);
+app.get("/api/ends/:type", (req, res) => {
+  End.findOne({type: req.params.type}).then(function(end){
+    res.json(end);
       })
   	});
 
 
 
-    app.get("/api/ends/:type/frameworks/:title", (req, res) => {
-      	End.findOne({type: req.params.type}, function(err, end){
-          let framework = end.frameworks.find((framework) => {
-            return framework.title === req.params.title
-          })
-          res.json(framework)
+  app.get("/api/ends/:type/frameworks/:title", (req, res) => {
+      End.findOne({type: req.params.type}, function(err, end){
+        let framework = end.frameworks.find((framework) => {
+          return framework.title === req.params.title
         })
+        res.json(framework)
       })
+    })
 
-  // Delete Comment
-//   app.delete("/api/ends/:type/frameworks/:title", (req, res) => {
-// 	End.findOne({type: req.params.type}).then(function(end){
-// 		let framework = end.frameworks.find((framework) => {
-// 			return framework.title === req.params.title
-// 		});
-// 		for(let i=0; i < end.frameworks.commments.length; i++){
-// 			if(user.accounts[i].id == account.id){
-// 				user.accounts.splice(i, 1)
-// 			}
-// 		}
-// 		user.current_funds = user.current_funds + account.current_amount;
-// 		user.save().then(function(){
-// 				res.json({success: true})
-// 		});
-// 	});
-// });
-
-
+      // Create comment
       app.post("/api/ends/:type/frameworks/:title/comments", function(req, res){
       End.findOne({type: req.params.type}).then(function(end){
         let framework = end.frameworks.find((framework)=> {
@@ -89,9 +72,12 @@ app.get("/api/ends", (req, res) => {
         let framework = end.framework.find((framework)=> {
           return framework.title === req.params.title
         })
-          for (let i=0; i<end.frameworks.comments.length; i++){
-            if (end.frameworks.comments[i].link===link){
-              end.frameworks.comments.splice(i, 1)
+          for (let i=0; i<framework.comments.length; i++){
+            if (framework.comments[i].link===link){
+              framework.comments.splice(i, 1)
+              end.save().then(function(end){
+                res.json(end)
+              })
             }
           }
       })
