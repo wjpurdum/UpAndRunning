@@ -39,6 +39,7 @@ angular
     "commentFactory",
     FrameworkShowControllerFunction
   ])
+  // Get this working for gold:
   .directive('donutChart', function(){
     function link(scope, el){
       var data = scope.data
@@ -146,7 +147,6 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
     console.log(comment_link)
     this.comment = commentFactory.get({link: comment_link})
     console.log("delete click registering!")
-
     console.log(comment_to_delete)
     // take out the then
     this.framework.comments.splice(idx, 1).then(function(framework){

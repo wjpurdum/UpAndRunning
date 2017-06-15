@@ -42,7 +42,6 @@ app.get("/api/ends/:type", (req, res) => {
   	});
 
 
-
   app.get("/api/ends/:type/frameworks/:title", (req, res) => {
       End.findOne({type: req.params.type}, function(err, end){
         let framework = end.frameworks.find((framework) => {
@@ -83,7 +82,7 @@ app.get("/api/ends/:type", (req, res) => {
       })
     })
 
-
+      // To render JSON for a framework's comments
       app.get("/api/ends/:type/frameworks/:title/comments", (req, res) => {
         	End.findOne({type: req.params.type}, function(err, end){
             let framework = end.frameworks.find((framework) => {
