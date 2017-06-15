@@ -1,4 +1,3 @@
-Up And Running
 
 # ![pageres](public/images/snippet.png)
 
