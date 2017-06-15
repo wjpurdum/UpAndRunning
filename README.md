@@ -1,4 +1,7 @@
 Up And Running
+
+# ![pageres](public/images/snippet.png)
+
 ## Technologies Used:
 This application uses MongoDB, Express JS, NodeJS and AngularJS
 
