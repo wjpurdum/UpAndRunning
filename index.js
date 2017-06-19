@@ -10,8 +10,12 @@ const Framework = require("./db/connection.js").Framework;
 const Comment = require("./db/connection.js").Comment;
 
 
-app.listen(4000, () => {
-  console.log("app listening on port 4000");
+// app.listen(4000, () => {
+//   console.log("app listening on port 4000");
+// });
+
+app.listen(app.get("port"), function(){
+  console.log("It's aliiive!");
 });
 
 app.use("/assets", express.static("public"));
