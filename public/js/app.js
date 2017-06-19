@@ -5,6 +5,8 @@ angular
   ])
   .config([
     "$stateProvider",
+    "$locationProvider",
+    "urlRouteProvider",
     RouterFunction
   ])
   .factory("endFactory", [
@@ -98,6 +100,7 @@ angular
     controller: "FrameworkShowController",
     controllerAs: "vm"
   })
+  $urlRouterProvider.otherwise("/endIndex")
 }
 // link to API
 function EndFactoryFunction($resource){
