@@ -240,6 +240,23 @@ var meteor = new Framework({
   image: "https://d14xs1qewsqjcd.cloudfront.net/assets/og-image-logo.png"
 })
 
+var ember = new Framework({
+  title: "EmberJS",
+  notable: "Ember has its own Command Line Interface (CLI), which gives you a more efficient interface with your application, as well as a number of tools to enhance development and access plug-ins for Ember applications.",
+  summary: "Ember JS provides a robus framework to build both web and desktop applications. It provides a framework for the model, view and controller as well as conventions and idioms to simplify the development process and 'enforce' best development practices.",
+  language: "JavaScript Web Framework",
+  languageSite: "https://www.emberjs.com/",
+  docs: "https://www.emberjs.com/api/",
+  npm: "In your Command Line: $npm install -g ember-cli@2.13 $ember new ember-quickstart",
+  cdn: "",
+  bower: "",
+  github: "https://github.com/emberjs/ember.js/",
+  twitter: "https://twitter.com/emberjs?lang=en",
+  assistance: "https://guides.emberjs.com/v2.13.0/tutorial/ember-cli/",
+  maintainers: "Ember Core Team",
+  image: "https://raw.githubusercontent.com/emberjs/website/master/source/images/brand/ember_Ember-Light.png"
+})
+
 
 
 var ends = [frontend, backend]
@@ -256,6 +273,7 @@ backend.frameworks.push(meteor)
 backend.frameworks.push(flask)
 backend.frameworks.push(express)
 backend.frameworks.push(django)
+frontend.frameworks.push(ember)
 
 
 ends.forEach((end, i)=> {
