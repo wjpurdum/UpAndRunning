@@ -19,11 +19,6 @@ angular
     "$resource",
     CommentFactoryFunction
   ])
-  // .factory('commentFactory', function($resource){
-  //   return $resource("/api/ends/:type/frameworks/:title/comments/:username", {
-  //     username: '@username'
-  //   })
-  // })
   .controller("EndIndexController", [
     "$state",
     "endFactory",
@@ -120,7 +115,6 @@ function CommentFactoryFunction($resource) {
 }
 
 // Controller Functions
-
 function EndIndexControllerFunction($state, endFactory){
   this.ends = endFactory.query();
 }
@@ -136,6 +130,7 @@ function FrameworkIndexControllerFunction($resource) {
 function FrameworkShowControllerFunction($state, $stateParams, endFactory, frameworkFactory, commentFactory){
   this.end = endFactory.get({type: $stateParams.type})
   this.framework = frameworkFactory.get({type: $stateParams.type, title: $stateParams.title})
+  // Create Comment
   this.create = function(){
     let newComment = new commentFactory()
     newComment.link = this.newComment.link
@@ -149,67 +144,10 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
   this.destroy = function(idx){
     console.log(commentFactory)
     var comment_to_delete = this.framework.comments[idx]
-    // this.framework.comments.splice(idx, 1), (function(framework){
-    //   this.framework.$update({type: $stateParams.type, title: $stateParams.title}).then(function(){
-    //     $state.reload()
-    //   })
-    // })
 
     commentFactory.delete({type: $stateParams.type, title: $stateParams.title, link: comment_to_delete.link}, function(res){
       console.log(res)
       $state.reload()
     })
-  //   scope.user = User.get( {username: 'bob'}  );    // GET
-  //  scope.user.$promise.then(function(data) {
-  //      console.log(data);
-  //  });
-
-    // comments.forEach(function(comment, index) {
-    //   console.log("inside For Each")
-    //   if (comment.username === username) {
-    //     comment.$delete({type: $stateParams.type, title: $stateParams.title}, function(){
-    //       this.framework.comments.splice(index, 1).then(function(framework){
-    //         $state.reload()
-    //       })
-    //     })
-    //   }
-    // })
   }
-
-
 }
-    // let comment_to_delete = commentFactory.query()
-    // var id = comment_to_delete.id
-    // comment_to_delete = this.comment_to_delete
-    // this.framework.comments[idx].$delete({type: $stateParams.type, title: $stateParams.title, index: index}, function (){
-    //   this.framework.comments.splice(idx, 1).then(function(framework){
-    //     $state.reload()
-    //   })
-    // })
-    //   console.log("delete click registering!")
-    // this.framework.comments.splice(idx, 1)
-
-    // console.log(idx)
-    // var comment_to_delete = this.framework.comments[idx]
-    // var comment_link = comment_to_delete.link
-    //   console.log(comment_link)
-    // let deletedComment = commentFactory.query({type: $stateParams.type, title: $stateParams.title})
-    //   console.log(deletedComment)
-    // comment_to_delete.link = this.comment_to_delete.link
-    // comment_to_delete.username = this.comment_to_delete.link
-    // deletedComment.username = this.deletedComment.username
-    // comment_to_delete.$delete({type: $stateParams.type, title: $stateParams.title, index: index}).then(function(framework){
-    //   $state.reload()
-    //     })
-    //   }
-  //   }
-  // }
-//     $scope.deletePost = function(post_id) {
-//   $scope.posts.forEach(function(post, index) {
-//     if (post_id === post.id) {
-//       post.$delete({user:"tjb1982",action:"delete",post_id:post.id}, function() {
-//         $scope.posts.splice(index, 1);
-//       });
-//     }
-//   });
-// }

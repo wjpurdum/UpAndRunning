@@ -34,13 +34,14 @@ app.get("/api/ends", (req, res) => {
     })
 	});
 
+// Render End
 app.get("/api/ends/:type", (req, res) => {
   End.findOne({type: req.params.type}).then(function(end){
     res.json(end);
       })
   	});
 
-
+  // Render framework
   app.get("/api/ends/:type/frameworks/:title", (req, res) => {
       End.findOne({type: req.params.type}, function(err, end){
         let framework = end.frameworks.find((framework) => {
@@ -63,18 +64,7 @@ app.get("/api/ends/:type", (req, res) => {
       })
     })
 
-    // app.put("/api/ends/:type/frameworks/:title/", function(req, res){
-    // End.findOne({type: req.params.type}).then(function(end){
-    //   let framework = end.frameworks.find((framework)=> {
-    //     return framework.title == req.params.title
-    //   })
-    //   end.save().then(function(end){
-    //     res.json(end)
-    //     })
-    //   })
-    // })
-
-    // delete comment
+    // Delete Comment
     app.delete("/api/ends/:type/frameworks/:title/comments/:link", (req, res)=> {
       End.findOne({type: req.params.type}).then(function(end){
         let framework = end.frameworks.find((framework)=> {
