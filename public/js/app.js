@@ -6,7 +6,7 @@ angular
   .config([
     "$stateProvider",
     "$locationProvider",
-    "urlRouteProvider",
+    "$urlRouterProvider",
     RouterFunction
   ])
   .factory("endFactory", [
@@ -79,7 +79,8 @@ angular
     }
   })
 
-  function RouterFunction($stateProvider){
+  function RouterFunction($stateProvider, $locationProvider, $urlRouterProvider){
+    $locationProvider.html5Mode(true)
     $stateProvider
     .state("endIndex", {
       url: "/ends",
