@@ -109,10 +109,14 @@ function FrameworkFactoryFunction($resource) {
 }
 
 function CommentFactoryFunction($resource) {
-  return $resource ("/api/ends/:type/frameworks/:title/comments", {}, {
-    update: {method: "PUT"}
+  return $resource ("/api/ends/:type/frameworks/:title/comments/", {}, {
+    update: {method: "PUT"},
+    query: {method: 'GET', params:{username: 'username'} },
+    delete: {method: 'DELETE', params:{username: 'username'}}
   })
 }
+
+
 
 // Controller Functions
 
@@ -142,15 +146,60 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
   }
   // Delete Comment
   this.destroy=function(idx){
+    console.log(this.framework)
+    console.log("click registering")
     var comment_to_delete = this.framework.comments[idx]
-    var comment_link = comment_to_delete.link
-    console.log(comment_link)
-    this.comment = commentFactory.get({link: comment_link})
-    console.log("delete click registering!")
-    console.log(comment_to_delete)
-    // take out the then
-    this.framework.comments.splice(idx, 1).then(function(framework){
-      $state.reload()
+    // var comment_to_delete_id = comment_to_delete
+    var idx = idx
+    var username = comment_to_delete.username
+    console.log(username)
+    let comments = commentFactory.query({type: $stateParams.type, title: $stateParams.title})
+    console.log()
+    comments.forEach(function(comment, index) {
+      console.log("inside For Each")
+      if (comment.username === username) {
+        comment.$delete({type: $stateParams.type, title: $stateParams.title}, function(){
+          this.framework.comments.splice(idx, 1).then(function(framework){
+            $state.reload()
+          })
+        })
+      }
     })
-    }
+  // }
   }
+}
+    // let comment_to_delete = commentFactory.query()
+    // var id = comment_to_delete.id
+    // comment_to_delete = this.comment_to_delete
+    // this.framework.comments[idx].$delete({type: $stateParams.type, title: $stateParams.title, index: index}, function (){
+    //   this.framework.comments.splice(idx, 1).then(function(framework){
+    //     $state.reload()
+    //   })
+    // })
+    //   console.log("delete click registering!")
+    // this.framework.comments.splice(idx, 1)
+
+    // console.log(idx)
+    // var comment_to_delete = this.framework.comments[idx]
+    // var comment_link = comment_to_delete.link
+    //   console.log(comment_link)
+    // let deletedComment = commentFactory.query({type: $stateParams.type, title: $stateParams.title})
+    //   console.log(deletedComment)
+    // comment_to_delete.link = this.comment_to_delete.link
+    // comment_to_delete.username = this.comment_to_delete.link
+    // deletedComment.username = this.deletedComment.username
+    // comment_to_delete.$delete({type: $stateParams.type, title: $stateParams.title, index: index}).then(function(framework){
+    //   $state.reload()
+    //     })
+    //   }
+  //   }
+  // }
+//     $scope.deletePost = function(post_id) {
+//   $scope.posts.forEach(function(post, index) {
+//     if (post_id === post.id) {
+//       post.$delete({user:"tjb1982",action:"delete",post_id:post.id}, function() {
+//         $scope.posts.splice(index, 1);
+//       });
+//     }
+//   });
+// }

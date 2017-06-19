@@ -65,14 +65,15 @@ app.get("/api/ends/:type", (req, res) => {
     })
 
     // delete comment
-    app.delete("/api/ends/:type/frameworks/:title/comments", (req, res)=> {
-      var link = req.body.link
+    app.delete("/api/ends/:type/frameworks/:title/comments/:username", (req, res)=> {
+      var username = req.body.username
       End.findOne({type: req.params.type}, function(err, end){
         let framework = end.framework.find((framework)=> {
           return framework.title === req.params.title
         })
+        // Alter this so it takes into account the username
           for (let i=0; i<framework.comments.length; i++){
-            if (framework.comments[i].link===link){
+            if (framework.comments[i].username===username){
               framework.comments.splice(i, 1)
               end.save().then(function(end){
                 res.json(end)
@@ -83,11 +84,24 @@ app.get("/api/ends/:type", (req, res) => {
     })
 
       // To render JSON for a framework's comments
-      app.get("/api/ends/:type/frameworks/:title/comments", (req, res) => {
+      app.get("/api/ends/:type/frameworks/:title/comments/", (req, res) => {
         	End.findOne({type: req.params.type}, function(err, end){
             let framework = end.frameworks.find((framework) => {
               return framework.title === req.params.title
             })
             res.json(framework.comments)
+          })
+        })
+
+      // To render JSON for a single comment
+      app.get("/api/ends/:type/frameworks/:title/comments/:username", (req, res) => {
+          End.findOne({type: req.params.type}, function(err, end){
+            let framework = end.frameworks.find((framework) => {
+              return framework.title === req.params.title
+            })
+            let comment = framework.comments.find((comment)=>{
+              return comment.username = req.params.username
+            })
+            res.json(comment)
           })
         })
