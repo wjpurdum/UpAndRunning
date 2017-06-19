@@ -6,6 +6,7 @@ if(process.env.NODE_ENV == "production"){
   mongoose.connect('mongodb://localhost/UpAndRunning');
 }
 
+
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
 

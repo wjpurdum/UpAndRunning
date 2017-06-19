@@ -6,15 +6,32 @@ const path = require('path')
 const End = require("./db/connection.js").End;
 const Framework = require("./db/connection.js").Framework;
 const Comment = require("./db/connection.js").Comment;
+app.set("port", process.env.PORT || 8080)
 
+var db;
 
-app.listen(4000, () => {
-  console.log("app listening on port 4000");
+// Mongo Connection
+mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  db = database;
+  console.log("Database connection ready");
+
+  var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+  });
 });
 
-// app.listen(app.get("port"), function(){
-//   console.log("It's aliiive!");
+
+// app.listen(4000, () => {
+//   console.log("app listening on port 4000");
 // });
+
+
 
 app.use("/assets", express.static("public"));
 app.use(parser.json({extended: true}));
