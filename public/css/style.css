@@ -93,6 +93,14 @@ a {
   color: white
 }
 
+.wrapper {
+  margin: 8px;
+}
+
+#outer-link {
+  color: #0000EE
+}
+
 .documentation {
   display: flex;
   flex-direction: row;

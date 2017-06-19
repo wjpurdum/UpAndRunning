@@ -64,6 +64,17 @@ app.get("/api/ends/:type", (req, res) => {
       })
     })
 
+    app.put("/api/ends/:type/frameworks/:title/", function(req, res){
+    End.findOne({type: req.params.type}).then(function(end){
+      let framework = end.frameworks.find((framework)=> {
+        return framework.title == req.params.title
+      })
+      end.save().then(function(end){
+        res.json(end)
+        })
+      })
+    })
+
     // delete comment
     // app.delete("/api/ends/:type/frameworks/:title/comments/:username", (req, res)=> {
     //   var username = req.body.username

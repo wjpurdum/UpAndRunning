@@ -243,11 +243,11 @@ var meteor = new Framework({
 var ember = new Framework({
   title: "EmberJS",
   notable: "Ember has its own Command Line Interface (CLI), which gives you a more efficient interface with your application, as well as a number of tools to enhance development and access plug-ins for Ember applications.",
-  summary: "Ember JS provides a robus framework to build both web and desktop applications. It provides a framework for the model, view and controller as well as conventions and idioms to simplify the development process and 'enforce' best development practices.",
+  summary: "Ember JS provides a robust framework to build both web and desktop applications. It provides a framework for the model, view and controller as well as conventions and idioms to simplify the development process and 'enforce' best development practices.",
   language: "JavaScript Web Framework",
   languageSite: "https://www.emberjs.com/",
   docs: "https://www.emberjs.com/api/",
-  npm: "In your Command Line: $npm install -g ember-cli@2.13 $ember new ember-quickstart",
+  npm: "In your Command Line: $ npm install -g ember-cli@2.13 $ ember new ember-quickstart",
   cdn: "",
   bower: "",
   github: "https://github.com/emberjs/ember.js/",

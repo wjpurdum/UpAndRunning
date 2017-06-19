@@ -8,14 +8,16 @@
 </div>
 
 <section class = "about-framework">
-  <p>{{vm.framework.summary}}</p>
-<!-- <div class="center"> -->
-  <p class='maintainers'>{{vm.framework.title}} is currently maintained by {{vm.framework.maintainers}}</p>
-<!-- </div> -->
-  <div class="notable">
-    <h2 class="notable-header">What's so great about it?</h2>
-  </div>
-<p>{{vm.framework.notable}}</p>
+  <div class="wrapper">
+    <p>{{vm.framework.summary}}</p>
+  <!-- <div class="center"> -->
+    <p class='maintainers'>{{vm.framework.title}} is currently maintained by {{vm.framework.maintainers}}</p>
+  <!-- </div> -->
+    <div class="notable">
+      <h2 class="notable-header">What's so great about it?</h2>
+    </div>
+  <p>{{vm.framework.notable}}</p>
+<div class="wrapper">
 </section>
 
 <h3>Basic install</h3>
@@ -41,11 +43,13 @@
 <section class="show-code">
 <h3> Show Your Code </h3>
 
-<p> If you've done a project in {{vm.framework.title}}, and you want to show your code, post a link to your repo below:</p>
+
+<p> If you've done a project in {{vm.framework.title}}, and you want to show your code, post a link to your repository below:</p>
+
 
 <div class="post-comment">
-    <input type="text" ng-model="vm.newComment.link" placeholder="GitHub link" />
-    <input type="text" ng-model="vm.newComment.username" placeholder="GitHub username" />
+    <input type="text" ng-model="vm.newComment.link" placeholder="Repo link" />
+    <input type="text" ng-model="vm.newComment.username" placeholder="Repo username" />
 </div>
 <div class="maintainers">
   <button data-ng-click="vm.create()">Show Your Stuff</button>
@@ -55,8 +59,8 @@
 
 <div class='comments' data-ng-repeat="comment in vm.framework.comments">
     <p><span class="underline">GitHub User:</span> {{comment.username}}</p>
-    <p>{{comment.link}}</p>
-    <button ng-click="vm.destroy($index)">Delete Comment</button>
+    <p><a id="outer-link" href={{comment.link}}>{{comment.link}}</a></p>
+    <button ng-click="vm.destroy($index)">Delete Link</button>
 </div>
 
 </section>
