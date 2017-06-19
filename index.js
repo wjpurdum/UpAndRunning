@@ -8,13 +8,13 @@ const Framework = require("./db/connection.js").Framework;
 const Comment = require("./db/connection.js").Comment;
 
 
-// app.listen(4000, () => {
-//   console.log("app listening on port 4000");
-// });
-
-app.listen(app.get("port"), function(){
-  console.log("It's aliiive!");
+app.listen(4000, () => {
+  console.log("app listening on port 4000");
 });
+
+// app.listen(app.get("port"), function(){
+//   console.log("It's aliiive!");
+// });
 
 app.use("/assets", express.static("public"));
 app.use(parser.json({extended: true}));
@@ -63,55 +63,33 @@ app.get("/api/ends/:type", (req, res) => {
       })
     })
 
-    app.put("/api/ends/:type/frameworks/:title/", function(req, res){
-    End.findOne({type: req.params.type}).then(function(end){
-      let framework = end.frameworks.find((framework)=> {
-        return framework.title == req.params.title
-      })
-      end.save().then(function(end){
-        res.json(end)
-        })
-      })
-    })
-
-    // delete comment
-    // app.delete("/api/ends/:type/frameworks/:title/comments/:username", (req, res)=> {
-    //   var username = req.body.username
-    //   End.findOne({type: req.params.type}, function(err, end){
-    //     let framework = end.framework.find((framework)=> {
-    //       return framework.title === req.params.title
+    // app.put("/api/ends/:type/frameworks/:title/", function(req, res){
+    // End.findOne({type: req.params.type}).then(function(end){
+    //   let framework = end.frameworks.find((framework)=> {
+    //     return framework.title == req.params.title
+    //   })
+    //   end.save().then(function(end){
+    //     res.json(end)
     //     })
-    //     // Alter this so it takes into account the username
-    //       for (let i=0; i<framework.comments.length; i++){
-    //         if (framework.comments[i].username===username){
-    //           framework.comments.splice(i, 1)
-    //           end.save().then(function(end){
-    //             res.json(end)
-    //           })
-    //         }
-    //       }
     //   })
     // })
 
-      // To render JSON for a framework's comments
-      app.get("/api/ends/:type/frameworks/:title/comments/", (req, res) => {
-        	End.findOne({type: req.params.type}, function(err, end){
-            let framework = end.frameworks.find((framework) => {
-              return framework.title === req.params.title
-            })
-            res.json(framework.comments)
+    // delete comment
+    app.delete("/api/ends/:type/frameworks/:title/comments/:link", (req, res)=> {
+      End.findOne({type: req.params.type}).then(function(end){
+        let framework = end.frameworks.find((framework)=> {
+          return framework.title == req.params.title
+        })
+        let comment = framework.comments.find((comment)=>{
+          return comment.link == req.params.link
+        })
+          for (let i = 0; i < framework.comments.length; i++) {
+            if (framework.comments[i].link == comment.link) {
+              framework.comments.splice(i, 1)
+              }
+            }
+            end.save().then(function() {
+              res.json({success:true})
           })
         })
-
-      // To render JSON for a single comment
-      app.get("/api/ends/:type/frameworks/:title/comments/:username", (req, res) => {
-          End.findOne({type: req.params.type}, function(err, end){
-            let framework = end.frameworks.find((framework) => {
-              return framework.title === req.params.title
-            })
-            let comment = framework.comments.find((comment)=>{
-              return comment.username = req.params.username
-            })
-            res.json(comment)
-          })
-        })
+      })
