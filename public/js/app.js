@@ -158,47 +158,47 @@ function FrameworkShowControllerFunction($state, $stateParams, endFactory, frame
     console.log("click registering")
     var comment_to_delete = this.framework.comments[idx]
     console.log(comment_to_delete)
-    this.framework.comments.splice(idx, 1), (function(framework){
-      this.framework.$update({type: $stateParams.type, title: $stateParams.title}).then(function(){
-        $state.reload()
-      })
-    })
+    // this.framework.comments.splice(idx, 1), (function(framework){
+    //   this.framework.$update({type: $stateParams.type, title: $stateParams.title}).then(function(){
+    //     $state.reload()
+    //   })
+    // })
 
     // var comment_to_delete_id = comment_to_delete
     var idx = idx
     var username = comment_to_delete.username
     console.log(username)
-    // let comments = commentFactory.query({type: $stateParams.type, title: $stateParams.title})
-    // let comment = comments.$promise.then(function(data){
-    //   data.toJSON()
-    // })
-    // console.log(comment)
-    // let comment = comments.$promise.then(function(data){
-    //   return data
-    // })
-    // console.log(comment)
+    let comments = commentFactory.query({type: $stateParams.type, title: $stateParams.title})
+    let comment = comments.$promise.then(function(data){
+      data.toJSON()
+    })
+    console.log(comment)
+    let comment = comments.$promise.then(function(data){
+      return data
+    })
+    console.log(comment)
 
-    // comments.$delete({type: $stateParams.type, title: $stateParams.title}, function(){
-    //   this.framework.comments.splice(idx, 1).then(function(framework){
-    //     $state.reload()
-    //   })
-    // })
+    comments.$delete({type: $stateParams.type, title: $stateParams.title}, function(){
+      this.framework.comments.splice(idx, 1).then(function(framework){
+        $state.reload()
+      })
+    })
   //   scope.user = User.get( {username: 'bob'}  );    // GET
   //  scope.user.$promise.then(function(data) {
   //      console.log(data);
   //  });
 
-    // comments.forEach(function(comment, index) {
-    //   console.log("inside For Each")
-    //   if (comment.username === username) {
-    //     comment.$delete({type: $stateParams.type, title: $stateParams.title}, function(){
-    //       this.framework.comments.splice(index, 1).then(function(framework){
-    //         $state.reload()
-    //       })
-    //     })
-    //   }
-    // })
-  // }
+    comments.forEach(function(comment, index) {
+      console.log("inside For Each")
+      if (comment.username === username) {
+        comment.$delete({type: $stateParams.type, title: $stateParams.title}, function(){
+          this.framework.comments.splice(index, 1).then(function(framework){
+            $state.reload()
+          })
+        })
+      }
+    })
+  }
 
   }
 }
