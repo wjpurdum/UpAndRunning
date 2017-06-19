@@ -1,9 +1,7 @@
-const cool = require('cool-ascii-faces');
 const express = require("express");
 const app = express();
 const parser   = require("body-parser");
 var mongoose = require("./db/connection");
-const passport = require ('passport')
 const path = require('path')
 const End = require("./db/connection.js").End;
 const Framework = require("./db/connection.js").Framework;
@@ -20,17 +18,14 @@ app.listen(app.get("port"), function(){
 
 app.use("/assets", express.static("public"));
 app.use(parser.json({extended: true}));
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 // Allows you to have index.html as root view
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
+
 
 // Route to access ends index
 app.get("/api/ends", (req, res) => {
