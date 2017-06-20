@@ -95,13 +95,13 @@ var react = new Framework({
   github: "https://github.com/facebook/react",
   twitter: "https://twitter.com/reactjs",
   assistance: "https://facebook.github.io/react/tutorial/tutorial.html",
-  maintainers: "Facebook ",
+  maintainers: "Facebook",
   image: "https://cdn-images-1.medium.com/max/640/1*XaGxIa_JuHc8YTR5Znv6tg.png"
 });
 
 var vue = new Framework({
   title: "Vue.js",
-  notable: "It prides itself on being a simplified and more streamlined framework that is less opinionated and more developer-friendly than existing JavaScript frameworks. Like React, it also works through a virtual DOM (Document Object Model), allowing for faster performance.",
+  notable: "It prides itself on being a simplified and more streamlined framework that is more developer-friendly than existing JavaScript frameworks. Like React, it also works through a virtual DOM (Document Object Model), allowing for faster performance. VueJS is one of the most popular open source repositories on GitHub, and has had more Forks than jQuery, or AngularJS.",
   summary: "VueJS provides a framework to build dynamic user interfaces. It is a simpler and “less opinionated” framework than AngularJS, and doesn’t have two-way data binding, making it a bit easier to quickly build out smaller applications.",
   language: "JavaScript Framework",
   languageSite: "https://vuejs.org/",
@@ -112,7 +112,7 @@ var vue = new Framework({
   github: "github.com/vuejs/vue",
   twitter: "https://twitter.com/vuejs",
   assistance: "https://vuejs.org/v2/guide/",
-  maintainers: "",
+  maintainers: "Evan You and the Vue Core Team",
   image: "https://coligo.io/vuejs-the-basics/cover-850x416.jpg"
 });
 
@@ -130,7 +130,7 @@ var backbone = new Framework({
   github: "https://github.com/jashkenas/backbone",
   twitter: "",
   assistance: "https://hackr.io/tutorials/learn-backbone-js",
-  maintainers: "Jeremy Ashkenas",
+  maintainers: "Jeremy Ashkenas and team",
   image: "http://www.korenlc.com/wp-content/uploads/2014/09/backbone-js.gif"
 });
 
@@ -191,7 +191,7 @@ var django = new Framework({
 
 var express = new Framework({
   title: "ExpressJS",
-  notable: "Express on its own is notably minimal. Many features that you would have access to out-of-the-box in more robust frameworks such as Rails are offered as plugins in Express.",
+  notable: "Express on its own is notably minimal, allowing the developer to have more decision over the app's architecture. Many features that you would have access to out-of-the-box in more robust frameworks such as Rails are offered as plugins in Express.",
   summary: "Express is the de-factor web framework for NodeJS, which is a run-time (server-side) environment written in JavaScript. Express allows you to write your server-side code in succinct JavaScript. The option to have both your front-end and back-end written entirely in JavaScript is becoming increasingly popular.",
   language: "JavaScript Web Framework for NodeJS",
   languageSite: "https://expressjs.com/",
@@ -219,7 +219,7 @@ var flask = new Framework({
   github: "https://github.com/pallets/flask",
   twitter: "",
   assistance: "http://flask.pocoo.org/docs/0.12/tutorial/",
-  maintainers: "Armin Ronacher",
+  maintainers: "Armin Ronacher and team",
   image: "https://skippy.org.uk/wp-content/uploads/Flask.jpg"
 })
 
