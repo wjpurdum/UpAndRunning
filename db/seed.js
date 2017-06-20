@@ -129,7 +129,7 @@ var backbone = new Framework({
   languageSite: "http://backbonejs.org/",
   docs: "http://backbonejs.org/docs/backbone.html",
   npm: "Download the latest version here: 'http://backbonejs.org/'",
-  cdn: "Insert the script tag in your header \ <script type = 'text/javascript' src = 'https://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js'></script>",
+  cdn: "Insert the script tag in your header: \n <script type = 'text/javascript' src = 'https://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js'></script>",
   bower: "",
   github: "https://github.com/jashkenas/backbone",
   twitter: "",
