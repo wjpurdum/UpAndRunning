@@ -232,8 +232,8 @@ h3 {
 }
 
 #learn-more {
-  font-size: 13px;
-  margin-top: 5px;
+  font-size: 17px;
+  margin-top: 5px 10px 5px 15px;
   color: white;
   background-color: #3F51B5;
   font-weight: bold;
