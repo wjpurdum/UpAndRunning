@@ -66,6 +66,7 @@ var backend = new End({
  })
 
 var angular = new Framework({
+  hook: "Superheroic JavaScript MVW Framework",
   title: "AngularJS",
   summary: "Use Angular to create dynamic front-end web applications. You can use Angular to extend the capability of your html elements and directly bind them to specific Angular controllers that are responsible for that section’s functionality.",
   notable: "Angular JS has two-way data-binding between html elements and their data in the Angular controller. This allows developers to write less code to achieve dynamic front-end functionality.",
@@ -83,6 +84,7 @@ var angular = new Framework({
 });
 
 var react = new Framework({
+  hook: "A JavaScript Library for Building User Interfaces",
   title: "React",
   notable: "React uses a virtual DOM (Document Object Model). When a change is made on the client side, it's then made on the virtual DOM, and then compared with the actual DOM, so that only the elements that have changed are re-rendered. This is allows for notably better application performance.",
   summary: "Use React to create fast web applications that you want to take to scale. React allows you to update and re-render individual components of your application without refreshing the entire page.",
@@ -101,6 +103,7 @@ var react = new Framework({
 
 var vue = new Framework({
   title: "Vue.js",
+  hook: "The Progressive JavaScript Framework",
   notable: "It prides itself on being a simplified and more streamlined framework that is more developer-friendly than existing JavaScript frameworks. Like React, it also works through a virtual DOM (Document Object Model), allowing for faster performance. VueJS is one of the most popular open source repositories on GitHub, and has had more Forks than jQuery, or AngularJS.",
   summary: "VueJS provides a framework to build dynamic user interfaces. It is a simpler and “less opinionated” framework than AngularJS, and doesn’t have two-way data binding, making it a bit easier to quickly build out smaller applications.",
   language: "JavaScript Framework",
@@ -109,7 +112,7 @@ var vue = new Framework({
   npm: "In your Command Line: $ npm install vue",
   cdn: "Insert the script tag: <script src='https://unpkg.com/vue'></script>",
   bower: "",
-  github: "github.com/vuejs/vue",
+  github: "https://github.com/vuejs/vue",
   twitter: "https://twitter.com/vuejs",
   assistance: "https://vuejs.org/v2/guide/",
   maintainers: "Evan You and the Vue Core Team",
@@ -118,6 +121,7 @@ var vue = new Framework({
 
 
 var backbone = new Framework({
+  hook, "Give your JS App some Backbone with Models, Views, Collections, and Events",
   title: "Backbone.js",
   notable: "Backbone is lightweight which allows applications to run quickly, and only requires one dependency (Underscore.js)",
   summary: "Backbone is a lightweight and less opinionated JavaScript library that provides flexible ways to query, manipulate and  update data from the server.",
@@ -135,6 +139,7 @@ var backbone = new Framework({
 });
 
 var rails = new Framework({
+  hook: "Optimizing for programmer happiness with Convention over Configuration is how we roll",
   title: "Rails",
   notable: "A lot of scaffolding and structure comes right out of the box, which will minimize your initial set up. Rails also suggests using strict naming conventions so that it can make assumptions about your web application's behavior, creating less work for a developer.",
   summary: "The Rails framework provides the full structure for an applications database, web service and front-end views written in the Ruby programming language.",
@@ -153,6 +158,7 @@ var rails = new Framework({
 });
 
 var jquery = new Framework({
+  hook: "The Write Less, Do More, JavaScript Library",
   title: "jQuery",
   notable: "It’s currently the most widely used JavaScript library.",
   summary: "The jQuery library provides more streamlined manipulation of DOM elements and AJAX requests. This allows for easier styling, animation and execution of 3rd party API requests.",
@@ -165,7 +171,7 @@ var jquery = new Framework({
   github: "https://github.com/jquery/jquery",
   twitter: "https://twitter.com/jquery?lang=en",
   assistance: "https://learn.jquery.com/",
-  maintainers: "",
+  maintainers: "the jQuery Foundation",
   image: "http://www.logoeps.com/wp-content/uploads/2011/08/jquery-logo.jpg"
 })
 
@@ -173,6 +179,7 @@ var jquery = new Framework({
 
 
 var django = new Framework({
+  hook, "The Web framework for perfectionists with deadlines",
   title: "Django",
   notable: "Because Django is great for scaling applications up, it's frequently used for large projects. Some notable sites that use Django include Mozilla, Instagram and the Public Broadcast Corporation. ",
   summary: "Django is a framework written in Python. It has a learner-friendly syntax, and simplifies the creation and manipulation of data.",
@@ -190,6 +197,7 @@ var django = new Framework({
 })
 
 var express = new Framework({
+  hook, "The fast, minimalist web framework for Node.js",
   title: "ExpressJS",
   notable: "Express on its own is notably minimal, allowing the developer to have more decision over the app's architecture. Many features that you would have access to out-of-the-box in more robust frameworks such as Rails are offered as plugins in Express.",
   summary: "Express is the de-factor web framework for NodeJS, which is a run-time (server-side) environment written in JavaScript. Express allows you to write your server-side code in succinct JavaScript. The option to have both your front-end and back-end written entirely in JavaScript is becoming increasingly popular.",
@@ -207,6 +215,7 @@ var express = new Framework({
 })
 
 var flask = new Framework({
+  hook: "A microframework for Python. Web development, one drop at a time"
   title: "Flask",
   notable: "According to GitHub statistics, Flask is the most popular Python web framework.",
   summary: "Flask is a web framework written in Python. It’s considered a ‘micro-framework’ because it doesn’t require any libraries or dependencies to work. Instead, any additional functionalities, such as form-validation or database abstraction, are brought in as native Flask extensions. This allows for continuity across the application. It is a light-weight framework written in Python that provides simple syntax for data manipulation.",
@@ -224,6 +233,7 @@ var flask = new Framework({
 })
 
 var meteor = new Framework({
+  hook, "The fastest way to build Java Script Apps",
   title: "MeteorJS",
   notable: "Meteor has real-time data functionality - as soon as data is update by the user, the database is automatically updated. Developers do not need to write code to execute the post request to the database.",
   summary: "Meteor allows you to quickly develop scalable projects. It’s known for being developer-friendly thanks to its native templating system and real-time data functionality. It has a number of built-in 'smart packages' that add extra functionality.",
@@ -241,6 +251,7 @@ var meteor = new Framework({
 })
 
 var ember = new Framework({
+  hook: "A framwork for building ambitous web applications",
   title: "EmberJS",
   notable: "Ember has its own Command Line Interface (CLI), which gives you a more efficient interface with your application, as well as a number of tools to enhance development and access plug-ins for Ember applications.",
   summary: "Ember JS provides a robust framework to build both web and desktop applications. It provides a framework for the model, view and controller as well as conventions and idioms to simplify the development process and 'enforce' best development practices.",

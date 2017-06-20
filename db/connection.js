@@ -15,6 +15,7 @@ var CommentSchema = new Schema({
   });
 
 var FrameworkSchema = new Schema({
+  hook: String,
   title: String,
   summary: String,
   notable: String,
