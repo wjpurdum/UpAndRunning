@@ -8,6 +8,10 @@ const Framework = require("./db/connection.js").Framework;
 const Comment = require("./db/connection.js").Comment;
 app.set("port", process.env.PORT || 8080)
 
+// app.listen(8080, () => {
+//   console.log("app listening on port 8080");
+// });
+
 
 app.use("/assets", express.static("public"));
 app.use(parser.json({extended: true}));
@@ -75,6 +79,8 @@ app.get("/api/ends/:type", (req, res) => {
           })
         })
       })
+
+
 
       app.listen(app.get("port"), ()=> {
         console.log("deployed!")

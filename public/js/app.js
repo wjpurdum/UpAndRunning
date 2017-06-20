@@ -79,6 +79,8 @@ angular
     }
   })
 
+
+
   function RouterFunction($stateProvider, $locationProvider, $urlRouterProvider){
     $locationProvider.html5Mode(true)
     $stateProvider
