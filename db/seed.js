@@ -121,7 +121,7 @@ var vue = new Framework({
 
 
 var backbone = new Framework({
-  hook, "Give your JS App some Backbone with Models, Views, Collections, and Events",
+  hook: "Give your JS App some Backbone with Models, Views, Collections, and Events",
   title: "Backbone.js",
   notable: "Backbone is lightweight which allows applications to run quickly, and only requires one dependency (Underscore.js)",
   summary: "Backbone is a lightweight and less opinionated JavaScript library that provides flexible ways to query, manipulate and  update data from the server.",
@@ -179,7 +179,7 @@ var jquery = new Framework({
 
 
 var django = new Framework({
-  hook, "The Web framework for perfectionists with deadlines",
+  hook: "The Web framework for perfectionists with deadlines",
   title: "Django",
   notable: "Because Django is great for scaling applications up, it's frequently used for large projects. Some notable sites that use Django include Mozilla, Instagram and the Public Broadcast Corporation. ",
   summary: "Django is a framework written in Python. It has a learner-friendly syntax, and simplifies the creation and manipulation of data.",
@@ -197,7 +197,7 @@ var django = new Framework({
 })
 
 var express = new Framework({
-  hook, "The fast, minimalist web framework for Node.js",
+  hook: "The fast, minimalist web framework for Node.js",
   title: "ExpressJS",
   notable: "Express on its own is notably minimal, allowing the developer to have more decision over the app's architecture. Many features that you would have access to out-of-the-box in more robust frameworks such as Rails are offered as plugins in Express.",
   summary: "Express is the de-factor web framework for NodeJS, which is a run-time (server-side) environment written in JavaScript. Express allows you to write your server-side code in succinct JavaScript. The option to have both your front-end and back-end written entirely in JavaScript is becoming increasingly popular.",
@@ -215,7 +215,7 @@ var express = new Framework({
 })
 
 var flask = new Framework({
-  hook: "A microframework for Python. Web development, one drop at a time"
+  hook: "A microframework for Python. Web development, one drop at a time",
   title: "Flask",
   notable: "According to GitHub statistics, Flask is the most popular Python web framework.",
   summary: "Flask is a web framework written in Python. It’s considered a ‘micro-framework’ because it doesn’t require any libraries or dependencies to work. Instead, any additional functionalities, such as form-validation or database abstraction, are brought in as native Flask extensions. This allows for continuity across the application. It is a light-weight framework written in Python that provides simple syntax for data manipulation.",
@@ -233,7 +233,7 @@ var flask = new Framework({
 })
 
 var meteor = new Framework({
-  hook, "The fastest way to build Java Script Apps",
+  hook: "The fastest way to build Java Script Apps",
   title: "MeteorJS",
   notable: "Meteor has real-time data functionality - as soon as data is update by the user, the database is automatically updated. Developers do not need to write code to execute the post request to the database.",
   summary: "Meteor allows you to quickly develop scalable projects. It’s known for being developer-friendly thanks to its native templating system and real-time data functionality. It has a number of built-in 'smart packages' that add extra functionality.",
