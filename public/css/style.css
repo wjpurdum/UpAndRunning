@@ -246,10 +246,9 @@ h3 {
 
 .hook {
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   color: #3F51B5;
-  font-style: italic;
-  font-weight: bold;
+  font-weight: bolder;
   font-family: 'Pontano Sans', sans-serif;
 }
 
