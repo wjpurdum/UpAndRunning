@@ -101,7 +101,7 @@ angular
     controller: "FrameworkShowController",
     controllerAs: "vm"
   })
-  $urlRouterProvider.otherwise("/endIndex")
+  $urlRouterProvider.otherwise("/ends")
 }
 // link to API
 function EndFactoryFunction($resource){
