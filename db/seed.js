@@ -68,7 +68,7 @@ var backend = new End({
 var angular = new Framework({
   hook: "Superheroic JavaScript MVW Framework",
   title: "AngularJS",
-  summary: "Use AngularJS to create dynamic front-end web applications. AngularJS extends the capability of your HTML elements and directly binds them to specific Angular controllers and directives that are responsible for that it's functionality. AngularJS allows you to divide your application up into seperate modules, and then and inject different dependencies into each model. Each part of your application only uses what it needs.",
+  summary: "Use AngularJS to create dynamic front-end web applications. AngularJS extends the capability of your HTML elements and directly binds them to specific Angular controllers and directives that are responsible for it's functionality. AngularJS allows you to divide your application up into seperate modules, and then inject specific dependencies into each model. Each part of your application only uses what it needs.",
   notable: "Angular JS has two-way data-binding between the model and the view. This allows developers to write less code to achieve dynamic front-end functionality. Large scale applications using AngularJS include PayPal, Jet Blue and Weather.com.",
   language: "JavaScript Framework",
   languageSite: "https://angularjs.org/",
@@ -86,7 +86,7 @@ var angular = new Framework({
 var react = new Framework({
   hook: "A JavaScript Library for Building User Interfaces",
   title: "React",
-  notable: "React uses a virtual DOM (Document Object Model). When a change is made on the client side, it's then made on the virtual DOM, and then compared with the actual DOM, so that only the elements that have changed are re-rendered. This is allows for notably better application performance. Some large scale applications using React JS include AirBnB, Facebook, Instagram and UberEats.",
+  notable: "React uses a virtual DOM (Document Object Model). When a change is made on the client side, it's then made on the virtual DOM, and then compared with the actual DOM, so that only the elements that have changed are re-rendered. This is allows for notably better application performance. Some large companies that use ReactJS include AirBnB, Facebook, Instagram and UberEats.",
   summary: "Use React to create fast web applications that you want to take to scale. React allows you to update and re-render individual components of your application without refreshing the entire page. More compartmentalized code allows for faster de-bugging.",
   language: "JavaScript Library",
   languageSite: "https://facebook.github.io/react/",
@@ -123,7 +123,7 @@ var vue = new Framework({
 var backbone = new Framework({
   hook: "Give your JS App some Backbone with Models, Views, Collections, and Events",
   title: "Backbone.js",
-  notable: "Backbone is a lightweight library that requires only one dependency (Underscore.js). Backbone is structured so that the applications's data and views are completely decoupled. Backbone's Model functionality watches for changes in the data and notifies the rest of the application when a change occurs. Some large-scale applications using Backbone include Sony Entertainment, Goje, Zen Payroll and Stitcher.",
+  notable: "Backbone is a lightweight library that requires only one dependency (Underscore.js). Backbone is structured so that the applications's data and views are completely decoupled. Backbone's Model functionality watches for changes in the data and notifies the rest of the application when a change occurs. Some large companies that use Backbone include Sony Entertainment, Goje, Zen Payroll and Stitcher.",
   summary: "Backbone is a considered to be a less opinionated JavaScript library that provides flexible ways to query, manipulate and  update data from the server. ",
   language: "JavaScript Library",
   languageSite: "http://backbonejs.org/",
@@ -141,7 +141,7 @@ var backbone = new Framework({
 var rails = new Framework({
   hook: "Optimizing for programmer happiness with Convention over Configuration is how we roll",
   title: "Rails",
-  notable: "A lot of scaffolding and structure comes right out of the box, which will minimize your initial set up. To optimize this framework's functionality, you must follow Rails' naming conventions so that Rails can make assumptions about your web application's behavior. Some large scale applications using Rails include Soundcloud, GitHub, Twitter and Hulu.",
+  notable: "A lot of scaffolding and structure comes right out of the box, which will minimize your initial set up. To optimize this framework's functionality, you must follow Rails' naming conventions so that Rails can make assumptions about your web application's behavior. Some large companies that use Rails include Soundcloud, GitHub, Twitter and Hulu.",
   summary: "The Rails framework provides the full structure for an application's database, web service and front-end views written in the Ruby programming language. ",
   language: "Server-side web application",
   languageSite: "http://rubyonrails.org/",
@@ -181,7 +181,7 @@ var jquery = new Framework({
 var django = new Framework({
   hook: "The Web framework for perfectionists with deadlines",
   title: "Django",
-  notable: "Because Django is great for scaling applications up, it's frequently used for large projects. Some large scale applications that use Django include Mozilla, Instagram and the Public Broadcast Corporation. ",
+  notable: "Because Django is great for scaling applications up, it's frequently used for large projects. Some large companies that use Django include Mozilla, Instagram and the Public Broadcast Corporation. ",
   summary: "Django is a framework written in Python. It has a learner-friendly syntax, and simplifies the creation and manipulation of data.",
   language: "Python Web Framework",
   languageSite: "https://www.djangoproject.com/start/overview/",
@@ -199,7 +199,7 @@ var django = new Framework({
 var express = new Framework({
   hook: "The fast, minimalist web framework for Node.js",
   title: "ExpressJS",
-  notable: "Express on its own is notably minimal, allowing the developer to have more decision over the app's architecture. Many features that you would have access to out-of-the-box in more robust frameworks such as Rails are offered as plugins in Express. This allows you to include only the elements that your application needs. Some large scale applications using ExpressJS include IBM, Accenture and Uber.",
+  notable: "Express on its own is notably minimal, allowing the developer to have more decision over the app's architecture. Many features that you would have access to out-of-the-box in more robust frameworks such as Rails are offered as plugins in Express. This allows you to include only the elements that your application needs. Companies using ExpressJS include IBM, Accenture and Uber.",
   summary: "Express is the de-factor web framework for NodeJS, which is a run-time (server-side) environment written in JavaScript. Express allows you to write all of your server-side code in succinct JavaScript. The option to have both your front-end and back-end written entirely in JavaScript is becoming increasingly popular.",
   language: "JavaScript Web Framework for NodeJS",
   languageSite: "https://expressjs.com/",
@@ -217,7 +217,7 @@ var express = new Framework({
 var flask = new Framework({
   hook: "A microframework for Python. Web development, one drop at a time",
   title: "Flask",
-  notable: "According to GitHub statistics, Flask is the most popular Python web framework. It requires very little boilerplate code to get your application started so it's a great framework for new developers. ",
+  notable: "According to GitHub statistics, Flask is the most popular Python web framework. It requires very little boilerplate code to get your application started so it's a great framework for new developers.",
   summary: "Flask is a web framework written in Python. It’s considered a ‘micro-framework’ because it doesn’t require any libraries or dependencies to work. Instead, any additional functionalities, such as form-validation or database abstraction, are brought in as native Flask extensions. This allows for continuity across the application. It is a light-weight framework written in Python that provides simple syntax for data manipulation.",
   language: "Python Web Framework",
   languageSite: "http://flask.pocoo.org/",
@@ -253,7 +253,7 @@ var meteor = new Framework({
 var ember = new Framework({
   hook: "A framwork for building ambitous web applications",
   title: "EmberJS",
-  notable: "Ember has its own Command Line Interface (CLI), which gives you a more efficient interface with your application, as well as a number of tools to enhance development and access plug-ins for Ember applications.",
+  notable: "Ember has its own Command Line Interface (CLI), which gives you a more efficient interface with your application, as well as a number of tools to enhance development and access plug-ins for Ember applications. Companies using Ember include Square, Living Social, Groupon and Blue Apron.",
   summary: "Ember JS provides a robust framework to build both web and desktop applications. It provides a framework for the model, view and controller as well as conventions and idioms to simplify the development process and 'enforce' best development practices.",
   language: "JavaScript Web Framework",
   languageSite: "https://www.emberjs.com/",

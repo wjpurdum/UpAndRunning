@@ -184,8 +184,7 @@ button {
 }
 
 .framework-row p {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px 0 10px;
   font-size: 20px;
   padding: 10px 15px 10px 20px;
 
@@ -232,9 +231,9 @@ h3 {
   font-size: 20px;
 }
 
-.learn-more {
-  font-size: 5px;
-  text-align: center;
+#learn-more {
+  font-size: 13px;
+  margin-top: 5px;
   color: white;
   background-color: #3F51B5;
   font-weight: bold;
