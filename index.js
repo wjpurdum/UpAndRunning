@@ -1,4 +1,5 @@
 const express = require("express");
+// Set app as instance of Express
 const app = express();
 const parser   = require("body-parser");
 var mongoose = require("./db/connection");
@@ -12,7 +13,7 @@ app.set("port", process.env.PORT || 8080)
 //   console.log("app listening on port 8080");
 // });
 
-
+// State that assets are in public folder
 app.use("/assets", express.static("public"));
 app.use(parser.json({extended: true}));
 

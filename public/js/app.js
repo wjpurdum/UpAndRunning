@@ -80,7 +80,7 @@ angular
   // })
 
 
-
+// In Angular, the $location service parses the URL in the address bar and makes changes to your application and vice versa.
   function RouterFunction($stateProvider, $locationProvider, $urlRouterProvider){
     $locationProvider.html5Mode(true)
     $stateProvider
@@ -105,7 +105,7 @@ angular
   })
   $urlRouterProvider.otherwise("/ends")
 }
-// link to API
+// link to API - because these are all nested, we could just use one factory
 function EndFactoryFunction($resource){
   return $resource("/api/ends/:type")
 }
