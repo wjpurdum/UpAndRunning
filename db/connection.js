@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+// Choose connection - accessing through Heroku or through local database?
 if(process.env.NODE_ENV == "production"){
 mongoose.connect(process.env.MONGOLAB_URL);
  }else{
@@ -11,11 +12,13 @@ mongoose.connect(process.env.MONGOLAB_URL);
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
 
+// Comment Schema
 var CommentSchema = new Schema({
   link: String,
   username: String
   });
 
+// Framework Schema:
 var FrameworkSchema = new Schema({
   hook: String,
   title: String,
@@ -35,6 +38,7 @@ var FrameworkSchema = new Schema({
   comments: [CommentSchema]
 });
 
+// End Schema
 var EndSchema = new Schema({
   type: String,
   description: String,
@@ -46,6 +50,7 @@ var EndSchema = new Schema({
   frameworks: [FrameworkSchema]
 });
 
+// Create Mongoose models using schema. Save them to constant variables.
 const End = mongoose.model("End", EndSchema);
 const Framework = mongoose.model("Framework", FrameworkSchema);
 const Comment = mongoose.model("Comment", CommentSchema);
@@ -59,6 +64,7 @@ db.once('open', function() {
 
 });
 
+// Export the models to be used where required
 module.exports = {
   End: End,
   Framework: Framework,

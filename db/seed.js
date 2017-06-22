@@ -3,6 +3,8 @@ var End = Schema.End
 var Framework = Schema.Framework
 var Comment = Schema.Comment
 
+
+// Clear the database before seeding
 End.remove({}, err => {
   if(err){
     console.log(err)
@@ -269,7 +271,7 @@ var ember = new Framework({
 })
 
 
-
+// Push nested objects
 var ends = [frontend, backend]
 var frameworks = [angular, react, vue, backbone, rails]
 var comments = [angular_comment]
